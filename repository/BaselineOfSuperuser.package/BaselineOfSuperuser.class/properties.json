@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfSuperuser",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfSuperuser",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
