@@ -1,0 +1,14 @@
+{
+	"category" : "Superuser-Shell",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SuShell",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
