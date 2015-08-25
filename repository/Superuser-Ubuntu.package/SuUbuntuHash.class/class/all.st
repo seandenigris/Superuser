@@ -2,7 +2,7 @@ accessing
 all
 
 	| soup hashRows |
-	soup := Soup fromUrl: 'https://help.ubuntu.com/community/UbuntuHashes'.
+	soup := Soup fromUrl: self secureUrl.
 	hashRows := soup findAllTags: [ :e |
 		'line862'.
 		e name = 'tr' and: [ [ e td p hasClass: 'line862' ] on: Error do: [ false ] ] ].
