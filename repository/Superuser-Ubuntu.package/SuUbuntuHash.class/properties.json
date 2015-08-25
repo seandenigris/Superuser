@@ -1,0 +1,15 @@
+{
+	"category" : "Superuser-Ubuntu",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SeanDeNigris 4/14/2014 19:27",
+	"instvars" : [
+		"filename",
+		"md5" ],
+	"name" : "SuUbuntuHash",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
