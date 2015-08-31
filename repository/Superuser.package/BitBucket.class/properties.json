@@ -1,0 +1,14 @@
+{
+	"category" : "Superuser-BitBucket",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BitBucket",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
