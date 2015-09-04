@@ -4,11 +4,10 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "SeanDeNigris 9/3/2015 23:05",
+	"commentStamp" : "",
 	"instvars" : [
-		"filename",
-		"md5" ],
-	"name" : "SuUbuntuHash",
+		 ],
+	"name" : "SuUbuntu",
 	"pools" : [
 		 ],
 	"super" : "Object",

@@ -1,0 +1,14 @@
+{
+	"category" : "Superuser-VirtualBox",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "VirtualBox",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
