@@ -1,0 +1,3 @@
+*Superuser
+checksums
+	^ self retrieveContents
