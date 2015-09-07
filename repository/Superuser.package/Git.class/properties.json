@@ -1,0 +1,14 @@
+{
+	"category" : "Superuser",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "Git",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
