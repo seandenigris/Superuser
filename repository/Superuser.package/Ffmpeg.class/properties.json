@@ -1,0 +1,14 @@
+{
+	"category" : "Superuser",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "Ffmpeg",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
