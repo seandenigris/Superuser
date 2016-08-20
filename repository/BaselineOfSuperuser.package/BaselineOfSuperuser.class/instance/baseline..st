@@ -4,11 +4,12 @@ baseline: spec
 
 	spec for: #'common' do: [
 		spec 
-			project: 'Soup' with: [
+			baseline: 'Soup' with: [
 				spec
-					className: #ConfigurationOfSoup;
-					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/PharoExtras/Soup/main/' ];
+					repository: 'github://seandenigris/Soup-for-Pharo:master/repository' ];
+			baseline: 'Magritte3' with: [
+				spec
+					repository: 'github://seandenigris/Magritte3:master/repository' ];
 			project: 'PetitParser' with: [
 				spec
 					className: #ConfigurationOfPetitParser;
@@ -19,4 +20,4 @@ baseline: spec
 			package: #Tempfile with: [
 				spec repository: 'http://smalltalkhub.com/mc/SeanDeNigris/SeansPlayground/main/' ];
 			package: #'Superuser' with: [
-				spec requires: #(#Soup #PetitParser #Tempfile ). ] ]
+				spec requires: #(#Soup #PetitParser #Tempfile #Magritte3 ). ] ]
