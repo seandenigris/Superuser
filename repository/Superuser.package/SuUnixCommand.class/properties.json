@@ -1,0 +1,19 @@
+{
+	"category" : "Superuser-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SeanDeNigris 5/7/2012 14:15",
+	"instvars" : [
+		"administrator",
+		"string",
+		"isBackground",
+		"outputRedirect",
+		"redirectErrorsToOutput",
+		"isRoot" ],
+	"name" : "SuUnixCommand",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

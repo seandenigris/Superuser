@@ -1,13 +1,13 @@
 {
-	"category" : "Superuser-Core",
+	"category" : "Superuser-Mac",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "SeanDeNigris 8/20/2016 14:59",
 	"instvars" : [
 		 ],
-	"name" : "SuShell",
+	"name" : "SuTimeMachine",
 	"pools" : [
 		 ],
 	"super" : "Object",

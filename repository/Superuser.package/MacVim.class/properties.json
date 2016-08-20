@@ -1,13 +1,13 @@
 {
-	"category" : "Superuser-Core",
+	"category" : "Superuser-Mac",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "SeanDeNigris 8/20/2016 15:35",
 	"instvars" : [
 		 ],
-	"name" : "SuShell",
+	"name" : "MacVim",
 	"pools" : [
 		 ],
 	"super" : "Object",

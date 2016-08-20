@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "SuShell",
+		"template" ],
+	"name" : "SuTemplatizedCommand",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "SuUnixCommand",
 	"type" : "normal" }

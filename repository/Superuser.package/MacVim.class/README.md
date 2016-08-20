@@ -1,0 +1,1 @@
+Original project abandoned and then forked to https://github.com/macvim-dev/homebrew-macvim
