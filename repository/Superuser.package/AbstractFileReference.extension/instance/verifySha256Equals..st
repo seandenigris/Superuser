@@ -10,5 +10,5 @@ verifySha256Equals: checksumSource
 		#folder -> self parent fullName.
 		#file -> self basename.
 		#outputFile -> outputFile fullName } asDictionary.
-	NBMacShell run: command.
+	LibC system: command.
 	self assert: outputFile contents trimBoth = checksumLine.

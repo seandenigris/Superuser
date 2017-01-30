@@ -1,0 +1,4 @@
+*Superuser
+forCommand
+
+	^ self.
