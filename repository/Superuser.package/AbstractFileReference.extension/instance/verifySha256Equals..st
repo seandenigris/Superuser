@@ -5,7 +5,7 @@ verifySha256Equals: checksumSource
 	checksumLine := checksums lines
 		detect: [ :e | e endsWith: ' *', self basename ].
 	template := 'cd "{folder}"; shasum -ba 256 "{file}" > "{outputFile}"'.
-	outputFile := '/tmp' asFileReference / DateAndTime new asString asLegalSelector.
+	outputFile := '/tmp' asFileReference / DateAndTime new asString asValidSelector.
 	command := template format: { 
 		#folder -> self parent fullName.
 		#file -> self basename.
