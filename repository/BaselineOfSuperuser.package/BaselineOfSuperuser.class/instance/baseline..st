@@ -17,7 +17,7 @@ baseline: spec
 					loads: #(#Tests );
 					repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ].
 		spec 
-			package: #Tempfile with: [
-				spec repository: 'http://smalltalkhub.com/mc/SeanDeNigris/SeansPlayground/main/' ];
+			baseline: 'Tempfile' with: [
+				spec repository: 'github://seandenigris/TempfileSt:master/repository' ];
 			package: #'Superuser' with: [
 				spec requires: #(#Soup #PetitParser #Tempfile #Magritte3 ). ] ]
