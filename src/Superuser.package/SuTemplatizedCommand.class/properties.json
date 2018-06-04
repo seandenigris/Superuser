@@ -1,14 +1,13 @@
 {
-	"category" : "Superuser-Core",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		"template" ],
-	"name" : "SuTemplatizedCommand",
-	"pools" : [
-		 ],
 	"super" : "SuUnixCommand",
-	"type" : "normal" }
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"template"
+	],
+	"name" : "SuTemplatizedCommand",
+	"type" : "normal"
+}
