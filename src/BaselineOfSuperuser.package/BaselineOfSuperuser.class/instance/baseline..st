@@ -7,9 +7,9 @@ baseline: spec
 			baseline: 'Soup' with: [
 				spec
 					repository: 'github://seandenigris/Soup-for-Pharo:master/repository' ];
-			baseline: 'Magritte3' with: [
+			baseline: 'Magritte' with: [
 				spec
-					repository: 'github://seandenigris/Magritte3:master/repository' ];
+					repository: 'github://seandenigris/Magritte' ];
 			project: 'PetitParser' with: [
 				spec
 					className: #ConfigurationOfPetitParser;
@@ -18,6 +18,6 @@ baseline: spec
 					repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ].
 		spec 
 			baseline: 'Tempfile' with: [
-				spec repository: 'github://seandenigris/TempfileSt:master/repository' ];
+				spec repository: 'github://seandenigris/TempfileSt' ];
 			package: #'Superuser' with: [
-				spec requires: #(#Soup #PetitParser #Tempfile #Magritte3 ). ] ]
+				spec requires: #(#Soup #PetitParser #Tempfile #Magritte ). ] ]
