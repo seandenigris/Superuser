@@ -1,13 +1,15 @@
 {
 	"commentStamp" : "",
-	"super" : "SuGenericUnixCommand",
-	"category" : "Superuser-Core",
+	"super" : "Object",
+	"category" : "Superuser",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"template"
+		"longForm",
+		"description",
+		"shortForm"
 	],
-	"name" : "SuTemplatizedCommand",
+	"name" : "SuFlag",
 	"type" : "normal"
 }

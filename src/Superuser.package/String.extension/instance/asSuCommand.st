@@ -1,4 +1,4 @@
 *Superuser
 asSuCommand
 
-	^ SuUnixCommand fromString: self.
+	^ SuGenericUnixCommand fromString: self.

@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "SeanDeNigris 3/31/2014 17:39",
 	"super" : "Object",
 	"category" : "Superuser",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "SuUnixCommand",
+	"name" : "SuRSyncHelp",
 	"type" : "normal"
 }

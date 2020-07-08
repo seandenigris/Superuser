@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "SeanDeNigris 3/31/2014 17:21",
+	"super" : "PPCompositeParser",
+	"category" : "Superuser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"optionsHeader",
+		"optionLine",
+		"optionsSection"
+	],
+	"name" : "SuRSyncHelpParser",
+	"type" : "normal"
+}

@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "SeanDeNigris 1/24/2014 20:19",
 	"super" : "Object",
-	"category" : "Superuser",
+	"category" : "Superuser-Tutor",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "SuUnixCommand",
+	"name" : "SuShellParser",
 	"type" : "normal"
 }
