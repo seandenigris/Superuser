@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "SeanDeNigris 3/31/2014 17:21",
 	"super" : "PPCompositeParser",
-	"category" : "Superuser",
+	"category" : "Superuser-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

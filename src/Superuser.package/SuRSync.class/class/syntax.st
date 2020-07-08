@@ -1,4 +1,4 @@
-as yet unclassified
+accessing
 syntax
 
 	| flags result |
@@ -35,4 +35,5 @@ syntax
 		binary: self binary;
 		yourself.
 	flags do: [ :f | f addFlag: f ].
+	self flag: 'Describe source argument and effect for folders of trailing slash vs. not'.
 	^ result
