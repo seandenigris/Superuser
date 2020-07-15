@@ -35,5 +35,5 @@ syntax
 		binary: self binary;
 		yourself.
 	flags do: [ :f | f addFlag: f ].
-	self flag: 'Describe source argument and effect for folders of trailing slash vs. not'.
+	"result addArgument: (SuArgument new type: AbstractFileReference) description: 'if directory without trailing slash, copy contents to destination/source/..., if trailing slash, copy contents directly into destination/..."
 	^ result
