@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "SuHelpASOptionListNode",
+	"category" : "Superuser-SmaCC",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"short",
+		"long"
+	],
+	"name" : "SuHelpASFlagFormsNode",
+	"type" : "normal"
+}

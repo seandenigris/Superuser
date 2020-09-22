@@ -1,0 +1,9 @@
+{
+	"commentStamp" : "",
+	"traitcomposition" : "TSmaCCParseNodeVisitor",
+	"classtraitcomposition" : "TSmaCCParseNodeVisitor classTrait",
+	"category" : "Superuser-SmaCC",
+	"classinstvars" : [ ],
+	"name" : "TSuHelpASOptionListNodeVisitor",
+	"instvars" : [ ]
+}
