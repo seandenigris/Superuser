@@ -1,9 +1,8 @@
-as yet unclassified
+accessing
 string
-
 	^ String streamContents: [ :s |
 		self isRoot ifTrue: [ s nextPutAll: 'sudo ' ].
-		s nextPutAll: string.
+		s nextPutAll: self basicCommandString.
 		outputRedirect ifNotNil: [ :target |
 			s
 				nextPutAll: ' > ';
