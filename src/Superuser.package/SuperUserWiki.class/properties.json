@@ -1,0 +1,13 @@
+{
+	"classtraitcomposition" : "TAPWiki classTrait",
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SuperUserWiki",
+	"commentStamp" : "",
+	"super" : "Object",
+	"traitcomposition" : "TAPWiki",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "Superuser"
+}
