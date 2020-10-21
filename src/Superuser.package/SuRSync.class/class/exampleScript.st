@@ -2,7 +2,7 @@ accessing
 exampleScript
 	<sampleInstance>
 	| exclusions subfolder source destination options commandTemplate exclusionFlag command |
-	self flag: 'Use case script t>o be reimplemented with our real model'.
+	self flag: 'Use case script to be reimplemented with our real model'.
 	exclusions := #(
 	"'ABCD1234.JPG'
 	'WXYZ5678.MOV'"
