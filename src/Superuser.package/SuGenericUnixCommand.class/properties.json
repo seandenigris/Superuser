@@ -7,7 +7,6 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"administrator",
-		"string",
 		"isBackground",
 		"outputRedirect",
 		"redirectErrorsToOutput",

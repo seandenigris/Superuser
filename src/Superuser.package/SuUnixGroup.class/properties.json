@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SuUnixUserEntity",
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SuUnixGroup",
+	"type" : "normal"
+}

@@ -6,6 +6,6 @@ string
 		outputRedirect ifNotNil: [ :target |
 			s
 				nextPutAll: ' > ';
-				nextPutAll: target forCommand ].
+				nextPutAll: target suForCommand ].
 		redirectErrorsToOutput ifTrue: [ s nextPutAll: ' 2>&1' ].
 		isBackground ifTrue: [ s nextPutAll: ' &' ] ].

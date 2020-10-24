@@ -1,4 +1,4 @@
 as yet unclassified
 , anObject
 
-	string := string, ' ', anObject forCommand.
+	template := self template, ' ', anObject suForCommand.
