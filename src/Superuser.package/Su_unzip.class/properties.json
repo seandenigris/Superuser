@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "SuGenericUnixCommand",
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"source",
+		"target"
+	],
+	"name" : "Su_unzip",
+	"type" : "normal"
+}
