@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "SuGenericUnixCommand",
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"source",
+		"target",
+		"link"
+	],
+	"name" : "Su_ln",
+	"type" : "normal"
+}
