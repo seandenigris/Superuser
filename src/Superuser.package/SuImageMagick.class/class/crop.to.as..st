@@ -1,4 +1,4 @@
-instance creation
+convenience
 crop: inputFile to: aRectangle as: outputFile
 
 	^ self crop

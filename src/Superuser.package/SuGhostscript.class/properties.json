@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SuGenericUnixCommand",
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SuGhostscript",
+	"type" : "normal"
+}

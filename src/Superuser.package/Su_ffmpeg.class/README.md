@@ -1,0 +1,1 @@
+Technique adapted from https://stackoverflow.com/a/7362274

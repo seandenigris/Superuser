@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "",
 	"super" : "SuGenericUnixCommand",
-	"category" : "Superuser",
+	"category" : "Superuser-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "RlImageMagick",
+	"instvars" : [
+		"input"
+	],
+	"name" : "Su_ffmpeg",
 	"type" : "normal"
 }
