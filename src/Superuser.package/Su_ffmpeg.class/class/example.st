@@ -3,8 +3,8 @@ example
 	<gtExample>
 	| result |
 	result := self new
-		argumentAt: #inputFile put: RlJpeg example asFileReference;
+		argumentAt: #inputFile put: self samplePNG_File;
 		yourself.
-	self assert: result extent equals: 934@1700.
-	self assert: (result string matchesRegex: 'ffmpeg -i ".*\.jpg" 2>&1').
+	self assert: result extent equals: 342@114.
+	self assert: (result string matchesRegex: 'ffmpeg -i ".*\.png" 2>&1').
 	^ result

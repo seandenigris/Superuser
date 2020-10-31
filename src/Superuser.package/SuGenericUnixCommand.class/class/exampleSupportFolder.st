@@ -1,0 +1,3 @@
+accessing
+exampleSupportFolder
+	^ BaselineOfSuperuser exampleSupportFolder
