@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "SuGenericUnixCommand",
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "Su_pyenv",
+	"type" : "normal"
+}
