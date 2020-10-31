@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SuImageMagick",
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SuImageMagickPreV7",
+	"type" : "normal"
+}

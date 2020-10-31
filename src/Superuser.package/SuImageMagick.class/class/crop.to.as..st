@@ -2,11 +2,10 @@ convenience
 crop: inputFile to: aRectangle as: outputFile
 
 	^ self crop
-		argumentSource: { 
-			#input -> inputFile.
-			#output -> outputFile.
-			#width -> aRectangle width.
-			#height -> aRectangle height.
-			#xOffset -> aRectangle left.
-			#yOffset -> aRectangle top } asDictionary;
+		argumentAt: #input put: inputFile;
+		argumentAt: #output put: outputFile;
+		argumentAt: #width put: aRectangle width;
+		argumentAt: #height put: aRectangle height;
+		argumentAt: #xOffset put: aRectangle left;
+		argumentAt: #yOffset put: aRectangle top;
 		run.

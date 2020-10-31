@@ -1,3 +1,3 @@
 accessing
 binary
-	^ 'magick'
+	^ 'convert'
