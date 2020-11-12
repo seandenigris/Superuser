@@ -1,6 +1,6 @@
 accessing
 gtCLIViewFor: aView
 	<gtView>
-	^ aView text 
+	^ aView text
 		title: 'CLI';
-		text: self string
+		text: self displayString
