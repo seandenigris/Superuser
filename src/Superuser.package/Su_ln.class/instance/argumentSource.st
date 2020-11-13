@@ -1,5 +1,5 @@
 accessing
 argumentSource
 	^ {
-		#source -> self link.
-		#target -> self target } asDictionary
+		#link -> self link.
+		#original -> self original } asDictionary

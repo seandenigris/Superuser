@@ -1,7 +1,7 @@
 magritte-accessing
-targetDescription
+originalDescription
 	<magritteDescription>
 	^ MAFileDescription new
-		accessor: #target;
+		accessor: #original;
 		required: true;
 		yourself

@@ -1,3 +1,3 @@
 accessing
-link: aMAMemoryFileModel
-	link := aMAMemoryFileModel
+link: file
+	link := file

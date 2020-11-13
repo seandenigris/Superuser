@@ -1,4 +1,4 @@
 accessing
 initialize
 	super initialize.
-	template := 'ln -s {link} {target}'.
+	template := 'ln -s {original} {link}'.
