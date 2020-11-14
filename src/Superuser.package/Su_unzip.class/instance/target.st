@@ -1,3 +1,3 @@
 accessing
 target
-	^ self maLazyFrom: self targetDescription
+	^ self maLazyInstVarUsing: self targetDescription

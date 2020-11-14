@@ -1,3 +1,3 @@
 accessing
 source
-	^ self maLazyFrom: self sourceDescription
+	^ self maLazyInstVarUsing: self sourceDescription

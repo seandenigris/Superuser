@@ -1,3 +1,3 @@
 accessing
 name
-	^ self maLazyFrom: self nameDescription
+	^ self maLazyInstVarUsing: self nameDescription

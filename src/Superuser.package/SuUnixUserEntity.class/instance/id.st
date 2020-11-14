@@ -1,3 +1,3 @@
 accessing
 id
-	^ self maLazyFrom: self idDescription
+	^ self maLazyInstVarUsing: self idDescription

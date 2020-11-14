@@ -1,3 +1,3 @@
 accessing
 isRoot
-	^ self maLazyFrom: self isRootDescription
+	^ self maLazyInstVarUsing: self isRootDescription

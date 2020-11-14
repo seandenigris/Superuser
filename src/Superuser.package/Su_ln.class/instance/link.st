@@ -1,3 +1,3 @@
 accessing
 link
-	^ self maLazyFrom: self linkDescription
+	^ self maLazyInstVarUsing: self linkDescription

@@ -1,3 +1,3 @@
 accessing
 original
-	^ self maLazyFrom: self originalDescription
+	^ self maLazyInstVarUsing: self originalDescription
