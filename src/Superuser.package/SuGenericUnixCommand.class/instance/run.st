@@ -1,8 +1,9 @@
-accessing
+running
 run
-
 	| exitCode |
 	exitCode := self isRoot
-		ifTrue: [ self runInTerminal ]
+		ifTrue: [ self runRoot ]
 		ifFalse: [ self shell runAndWait: self string ].
-	exitCode = 0 ifFalse: [ self error: 'Exit code ', exitCode asString, ' returned from ', self string ]
+	exitCode = 0
+		ifFalse: [ 
+			self error: 'Exit code ' , exitCode asString , ' returned from ' , self string ]
