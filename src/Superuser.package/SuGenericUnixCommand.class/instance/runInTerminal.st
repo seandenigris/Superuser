@@ -1,3 +1,3 @@
 running
 runInTerminal
-	^ self class runInTerminal: self string
+	 self class runInTerminal: self string

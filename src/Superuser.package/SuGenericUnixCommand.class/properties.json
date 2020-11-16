@@ -4,7 +4,9 @@
 	"category" : "Superuser-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [ ],
+	"classvars" : [
+		"DefaultAdminUsername"
+	],
 	"instvars" : [
 		"administrator",
 		"isBackground",
