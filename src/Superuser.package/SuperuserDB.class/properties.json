@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SpFileDatabase",
+	"category" : "Superuser-Persistence",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SuperuserDB",
+	"type" : "normal"
+}
