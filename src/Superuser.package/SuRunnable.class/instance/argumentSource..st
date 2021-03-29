@@ -1,4 +1,4 @@
-accessing
+private
 argumentSource: anObject
 	"It is usually preferrable to set arguments via #argumentAt:put:, which will automatically handle creating and maintaining the appropriate collection for the arguments.
 	

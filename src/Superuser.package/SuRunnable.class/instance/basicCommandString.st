@@ -1,4 +1,4 @@
-accessing
+private
 basicCommandString
 	| preparedArguments |
 	preparedArguments := self argumentSource copy.

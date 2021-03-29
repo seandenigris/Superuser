@@ -1,4 +1,4 @@
-as yet unclassified
+copying
 copyToClipboard
 	<magritteAction>
 	Clipboard clipboardText: self string

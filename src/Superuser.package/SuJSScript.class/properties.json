@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SuRunnable",
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SuJSScript",
+	"type" : "normal"
+}

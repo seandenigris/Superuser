@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "Object",
+	"super" : "SuRunnable",
 	"category" : "Superuser-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -12,9 +12,7 @@
 		"isBackground",
 		"outputRedirect",
 		"redirectErrorsToOutput",
-		"isRoot",
-		"template",
-		"argumentSource"
+		"isRoot"
 	],
 	"name" : "SuGenericUnixCommand",
 	"type" : "normal"

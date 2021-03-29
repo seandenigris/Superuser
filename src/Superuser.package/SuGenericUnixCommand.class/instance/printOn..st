@@ -1,5 +1,4 @@
-as yet unclassified
+accessing
 printOn: aStream
-	aStream
-		nextPutAll: '$ ';
-		nextPutAll: self string
+	aStream nextPutAll: '$ '.
+	super printOn: aStream
