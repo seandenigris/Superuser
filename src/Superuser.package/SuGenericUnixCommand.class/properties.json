@@ -2,7 +2,9 @@
 	"commentStamp" : "<historical>",
 	"super" : "SuRunnable",
 	"category" : "Superuser-Core",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"outputDecoder"
+	],
 	"pools" : [ ],
 	"classvars" : [
 		"DefaultAdminUsername"
@@ -12,7 +14,8 @@
 		"isBackground",
 		"outputRedirect",
 		"redirectErrorsToOutput",
-		"isRoot"
+		"isRoot",
+		"outputDecoder"
 	],
 	"name" : "SuGenericUnixCommand",
 	"type" : "normal"

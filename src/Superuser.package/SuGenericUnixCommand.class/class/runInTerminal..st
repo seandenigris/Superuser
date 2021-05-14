@@ -15,4 +15,4 @@ runInTerminal: aString
 		str
 			truncate;
 			nextPutAll: script ].
-	LibC system: 'osascript ', (FileLocator imageDirectory / 'script.txt') suForCommand
+	self run: 'osascript ', (FileLocator imageDirectory / 'script.txt') suForCommand

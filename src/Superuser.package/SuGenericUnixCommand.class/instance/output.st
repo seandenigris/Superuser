@@ -1,3 +1,5 @@
 accessing
 output
-	^ self shell resultOfCommand: self string
+	| rawOutput |
+	rawOutput := self class resultOfCommand: self string.
+	^ self outputDecoder cull: rawOutput
