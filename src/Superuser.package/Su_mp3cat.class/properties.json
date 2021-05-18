@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "SuGenericUnixCommand",
+	"category" : "Superuser-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"source",
+		"target",
+		"output",
+		"input"
+	],
+	"name" : "Su_mp3cat",
+	"type" : "normal"
+}
