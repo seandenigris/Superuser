@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "SuHelpASOptionListNodeVisitor",
+	"category" : "Superuser-GToolkit",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"options"
+	],
+	"name" : "SuHelpFlagAggregator",
+	"type" : "normal"
+}

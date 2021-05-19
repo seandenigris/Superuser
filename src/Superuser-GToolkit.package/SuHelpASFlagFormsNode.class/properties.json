@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "SuHelpASOptionListNode",
+	"category" : "Superuser-GToolkit",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"short",
+		"long"
+	],
+	"name" : "SuHelpASFlagFormsNode",
+	"type" : "normal"
+}

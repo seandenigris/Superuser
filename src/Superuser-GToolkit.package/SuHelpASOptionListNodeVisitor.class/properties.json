@@ -1,0 +1,13 @@
+{
+	"classtraitcomposition" : "TSuHelpASOptionListNodeVisitor classTrait",
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SuHelpASOptionListNodeVisitor",
+	"commentStamp" : "",
+	"super" : "Object",
+	"traitcomposition" : "TSuHelpASOptionListNodeVisitor",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "Superuser-GToolkit"
+}
