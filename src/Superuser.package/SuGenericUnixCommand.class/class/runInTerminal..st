@@ -4,15 +4,14 @@ runInTerminal: aString
 		* HEREDOC form didn't seem to do anything
 		* separate -e flag for each line got too complicated with all the escaping"
 
-	| escapedString template command isSuccess applescript script |
+	| escapedString template command isSuccess applescript script scriptFile |
 	escapedString := aString copyReplaceAll: '"' with: '\"'.
 	template := 'tell application "Terminal"
 		activate
 		do script "{command}"
 	end tell'.
 	script := template format: {(#command -> escapedString)} asDictionary.
-	FileLocator imageDirectory / 'script.txt' writeStreamDo: [ :str | 
-		str
-			truncate;
-			nextPutAll: script ].
-	self run: 'osascript ', (FileLocator imageDirectory / 'script.txt') suForCommand
+	scriptFile := Tempfile new
+		writeStreamDo: [ :str | str nextPutAll: script ];
+		yourself.
+	self run: 'osascript ', scriptFile suForCommand
