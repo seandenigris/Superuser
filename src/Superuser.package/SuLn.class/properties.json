@@ -6,8 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"input"
+		"source",
+		"link",
+		"original"
 	],
-	"name" : "Su_ffmpeg",
+	"name" : "SuLn",
 	"type" : "normal"
 }

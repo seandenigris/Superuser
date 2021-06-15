@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"super" : "SuGenericUnixCommand",
 	"category" : "Superuser-Core",
 	"classinstvars" : [ ],
@@ -7,9 +7,10 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"source",
-		"link",
-		"original"
+		"target",
+		"output",
+		"input"
 	],
-	"name" : "Su_ln",
+	"name" : "SuMp3cat",
 	"type" : "normal"
 }

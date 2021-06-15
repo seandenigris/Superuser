@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "Su_hdiutil",
+	"instvars" : [
+		"input"
+	],
+	"name" : "SuFfmpeg",
 	"type" : "normal"
 }

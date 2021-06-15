@@ -4,7 +4,7 @@ example
 	| original link result |
 	original := Tempfile new ensureCreateFile.
 	link := Tempfile new ensureCreateDirectory.
-	result := Su_ln new
+	result := SuLn new
 		original: original;
 		link: link;
 		yourself.
