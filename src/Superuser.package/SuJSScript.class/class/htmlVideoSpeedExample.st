@@ -1,4 +1,4 @@
-accessing
+examples
 htmlVideoSpeedExample
 	<gtExample>
 	| result |

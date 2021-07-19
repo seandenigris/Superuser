@@ -1,4 +1,4 @@
-accessing
+instance creation
 htmlVideoSpeed
 	<apiDocumentation>
 	<description: 'Set the speed of all HTML5 ==<video>== elements. 1 is regular speed. See the ==playbackRate== property *docs >https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/playbackRate* for more info.'>
