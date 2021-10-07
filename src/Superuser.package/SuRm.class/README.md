@@ -1,1 +1,0 @@
-A RSync is xxxxxxxxx.

@@ -1,9 +1,0 @@
-{
-	"commentStamp" : "",
-	"traitcomposition" : "TSmaCCParseNodeVisitor",
-	"classtraitcomposition" : "TSmaCCParseNodeVisitor classTrait",
-	"category" : "Superuser-GToolkit",
-	"classinstvars" : [ ],
-	"name" : "TSuHelpASOptionListNodeVisitor",
-	"instvars" : [ ]
-}

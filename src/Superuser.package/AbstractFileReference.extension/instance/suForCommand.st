@@ -1,4 +1,0 @@
-*Superuser
-suForCommand
-
-	^ self asCliString.
