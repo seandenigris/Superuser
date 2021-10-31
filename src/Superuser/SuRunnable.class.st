@@ -1,15 +1,22 @@
 "
 I represent a unix-like command. 
 
-I have a ==template== with named or indexed variables, which can be filled with ==arguments==. Subclasses must at minimum provide their own template.
-!Arguments
-!!String Encoding
+I have a `template` with named or indexed variables, which can be filled with `arguments`. 
+
+Subclasses must at minimum provide their own template by either:
+- Many commands are so complex that the template must be set during object creation for each variant.
+- For the default template, setting the inst var in `#initialize`. This is *The Smalltalk Way*.
+- If there is only one template, overriding `#template` instead has the nice side-effect that one can more easily compare subclasses' templates in the browser.
+
+# Arguments
+## String Encoding
 Superuser provides a bit of magic for safely representing commonly used object types on the command line. For your custom types, define ==#suForCommand==. Here are the built-in usages:
-[[[language=smalltalk
+```smalltalk
 #suForCommand gtImplementors
-]]]
-!!!Meta-Magic
-Alternately, and for more (per command object) control, Magritte element descriptions  can be a great place to store the encoder. Just send ${method:MAElementDescription>>#suEncoder:}$
+```
+
+# Meta-Magic
+Alternately, and for more (per command object) control, Magritte element descriptions  can be a great place to store the encoder. Just send {{gtMethod:MAElementDescription>>#suEncoder:}}
 "
 Class {
 	#name : #SuRunnable,
@@ -18,7 +25,7 @@ Class {
 		'argumentSource',
 		'template'
 	],
-	#category : 'Superuser-Core'
+	#category : #'Superuser-Core'
 }
 
 { #category : #accessing }
