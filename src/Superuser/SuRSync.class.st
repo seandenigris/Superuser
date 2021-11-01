@@ -2,6 +2,9 @@
 # Backups
 What is the difference between a backup and other syncing? Well, if you think about it, one difference is that you don't necessarily want to replace different files with the same name. When syncing, you want the destination to simply mirror the source, but when backing up, you may want to keep files that are no longer there. This is enabled with the `--backup` flag and configured with the `--suffix` (how to name replaced files) and `backup-dir` (where to put them) flags. 
 
+# Permissions
+If you want to preserve ownership,  you should either run as root or as the owner of the target folder [via SO](https://stackoverflow.com/a/65844028)
+
 # Spaces in path
 One method is to both quote the path and escape the spaces with backslashes. There are others. See [this thread](https://unix.stackexchange.com/questions/104618) for more info.
 
