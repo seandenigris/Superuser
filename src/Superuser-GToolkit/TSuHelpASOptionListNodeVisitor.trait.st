@@ -1,7 +1,8 @@
 Trait {
 	#name : #TSuHelpASOptionListNodeVisitor,
 	#traits : 'TSmaCCParseNodeVisitor',
-	#category : 'Superuser-GToolkit'
+	#classTraits : 'TSmaCCParseNodeVisitor classTrait',
+	#category : #'Superuser-GToolkit'
 }
 
 { #category : #generated }
