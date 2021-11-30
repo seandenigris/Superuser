@@ -160,6 +160,16 @@ SuGenericUnixCommand >> gtCLIViewFor: aView [
 		text: self displayString
 ]
 
+{ #category : #accessing }
+SuGenericUnixCommand >> gtRunActionFor: anAction [
+
+	<gtAction>
+		^ anAction button
+		  icon: BrGlamorousIcons go;
+		  tooltip: 'Run';
+		  action: [ self run ]
+]
+
 { #category : #'as yet unclassified' }
 SuGenericUnixCommand >> inBackground [
 
