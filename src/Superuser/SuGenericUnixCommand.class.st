@@ -184,6 +184,11 @@ SuGenericUnixCommand >> initialize [
 	redirectErrorsToOutput := false.
 ]
 
+{ #category : #running }
+SuGenericUnixCommand >> isAdminstrator [
+	^ administrator
+]
+
 { #category : #accessing }
 SuGenericUnixCommand >> isRoot [
 	^ self maLazyInstVarUsing: self isRootDescription
@@ -246,12 +251,24 @@ SuGenericUnixCommand >> redirectOutputTo: aFileReference [
 
 { #category : #running }
 SuGenericUnixCommand >> run [
-	self isRoot
-		ifTrue: [ self runRoot "It's not possible to get an error code in the current implementation because we punt to an external shell program" ]
-		ifFalse: [ 
-			| exitCode |
-			exitCode := self class run: self string.
-			exitCode = 0 ifFalse: [ self signalErrorCode: exitCode ] ]
+	| exitCode |
+	self isRoot ifTrue: [ ^ self runRoot "It's not possible to get an error code in the current implementation because we punt to an external shell program" ].
+	self isAdminstrator ifTrue: [ ^ self runAsAdministrator "It's not possible to get an error code in the current implementation because we punt to an external shell program" ].
+
+	exitCode := self class run: self string.
+	exitCode = 0 ifFalse: [ self signalErrorCode: exitCode ]
+]
+
+{ #category : #private }
+SuGenericUnixCommand >> runAsAdministrator [
+	| command |
+	command := SuUnixUser current isAdmin
+		ifTrue: [ self string ]
+		ifFalse: [
+			self string copyToClipboard.
+			'su ', self class defaultAdminUsername ].
+	
+	^ self class runInTerminal: command
 ]
 
 { #category : #running }
@@ -272,14 +289,8 @@ SuGenericUnixCommand >> runOSP [
 
 { #category : #private }
 SuGenericUnixCommand >> runRoot [
-	| command |
-	command := SuUnixUser current isAdmin
-		ifTrue: [ self string ]
-		ifFalse: [
-			self string copyToClipboard.
-			'su ', self class defaultAdminUsername ].
 	
-	^ self class runInTerminal: command
+	^ self runAsAdministrator
 ]
 
 { #category : #running }
