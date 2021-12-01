@@ -186,7 +186,7 @@ SuGenericUnixCommand >> initialize [
 
 { #category : #running }
 SuGenericUnixCommand >> isAdminstrator [
-	^ administrator
+	^ administrator ifNil: [ false ]
 ]
 
 { #category : #accessing }
