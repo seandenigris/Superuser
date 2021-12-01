@@ -1,7 +1,17 @@
+"
+An attemple to make Unix commands more sane.
+
+A few directions:
+- wrap commands in high-level objects to reign in complexity
+- command line autocomplete
+- execute commands and scripts on any server
+- self-documentation
+- verify authenticity of servers/downloads
+"
 Class {
 	#name : #BaselineOfSuperuser,
 	#superclass : #BaselineOf,
-	#category : 'BaselineOfSuperuser'
+	#category : #BaselineOfSuperuser
 }
 
 { #category : #accessing }
