@@ -9,6 +9,11 @@ BaselineOfSuperuser class >> exampleSupportFolder [
 	^ FileLocator localDirectory / 'iceberg' / 'seandenigris' / 'Superuser'/ 'example support'
 ]
 
+{ #category : #testing }
+BaselineOfSuperuser class >> isDynabook [
+	^ true
+]
+
 { #category : #baseline }
 BaselineOfSuperuser >> baseline: spec [
 	<baseline>
