@@ -1,5 +1,7 @@
 "
-I should probably be a ""real"" Applescript command
+I should probably be a ""real"" Applescript command.
+
+NB. QNAP's manual [suggests](https://docs.qnap.com/nas-outdated/4.1/SMB/en/index.html?connect_shares_maclinux.htm) that there should be a colon before the path, not sure if that's right/wrong/optional.
 "
 Class {
 	#name : #SuSMBMount,
