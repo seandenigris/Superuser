@@ -4,10 +4,21 @@ Class {
 	#instVars : [
 		'longForm',
 		'description',
-		'shortForm'
+		'shortForm',
+		'argument'
 	],
-	#category : 'Superuser-Core'
+	#category : #'Superuser-Core'
 }
+
+{ #category : #accessing }
+SuFlag >> argument [
+	^ argument
+]
+
+{ #category : #accessing }
+SuFlag >> argument: aString [
+	argument := aString
+]
 
 { #category : #private }
 SuFlag >> description [
@@ -31,6 +42,14 @@ SuFlag >> longForm [
 SuFlag >> longForm: aString [ 
 
 	longForm := aString.
+]
+
+{ #category : #accessing }
+SuFlag >> printOn: aStream [
+	longForm ifNotNil: [ aStream nextPutAll: '--'; nextPutAll: longForm ].
+	argument ifNotNil: [ aStream nextPutAll: '='; nextPutAll: argument ].
+	shortForm ifNotNil: [ aStream nextPutAll: ', -'; nextPut: shortForm ].
+	description ifNotNil: [ aStream nextPutAll: ' '; nextPutAll: description ].
 ]
 
 { #category : #accessing }
