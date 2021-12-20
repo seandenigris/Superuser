@@ -153,14 +153,6 @@ SuGenericUnixCommand >> execute [
 ]
 
 { #category : #accessing }
-SuGenericUnixCommand >> gtCLIViewFor: aView [
-	<gtView>
-	^ aView text
-		title: 'CLI';
-		text: self displayString
-]
-
-{ #category : #accessing }
 SuGenericUnixCommand >> gtRunActionFor: anAction [
 
 	<gtAction>

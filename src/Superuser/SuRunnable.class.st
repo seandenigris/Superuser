@@ -91,6 +91,14 @@ SuRunnable >> ensureArgumentSourceFor: key [
 	^ self error: 'Can''t use a ', key class, ' as key'.
 ]
 
+{ #category : #accessing }
+SuRunnable >> gtCLIViewFor: aView [
+	<gtView>
+	^ aView text
+		title: 'CLI';
+		text: self displayString
+]
+
 { #category : #private }
 SuRunnable >> prepareArguments: aCollection [
 	"Hook e.g. for arguments to be escaped or additional arguments be inserted"
