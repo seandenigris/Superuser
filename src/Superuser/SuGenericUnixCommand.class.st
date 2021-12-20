@@ -146,6 +146,12 @@ SuGenericUnixCommand >> asRoot [
 	self isRoot: true.
 ]
 
+{ #category : #accessing }
+SuGenericUnixCommand >> basicCommandString [
+	"So we don't have to worry about extra spaces when adding flags, arguments, etc"
+	^ super basicCommandString withBlanksCondensed
+]
+
 { #category : #'command - compatibility' }
 SuGenericUnixCommand >> execute [
 	"This is the canonical message name from the GoF pattern, so provide it to reduce astonishment"
