@@ -3,7 +3,9 @@ Extension { #name : #String }
 { #category : #'*Superuser' }
 String >> asSuCommand [
 
-	^ SuGenericUnixCommand fromString: self.
+	^ SuGenericUnixCommand new
+		template: self;
+		yourself.
 ]
 
 { #category : #'*Superuser' }
