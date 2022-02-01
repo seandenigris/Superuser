@@ -5,7 +5,7 @@ This piecemeal approach could explode interface, requiring a real composable mod
 Class {
 	#name : #SuJSScript,
 	#superclass : #SuRunnable,
-	#category : 'Superuser-Core'
+	#category : #'Superuser-Core'
 }
 
 { #category : #'instance creation' }
@@ -14,6 +14,21 @@ SuJSScript class >> clickQueriedElement [
 	^ self new
 		template: 'document.querySelector({selectors}).parentElement.click()';
 		yourself
+]
+
+{ #category : #accessing }
+SuJSScript class >> exampleCombinedScript [
+	<gtExample>
+	
+	^ self 
+		given: [] 
+		when: [
+			self htmlVideos + self videoPlay
+				argumentAt: #video put: 'videos[0]';
+				argumentAt: #videosVarName put: 'videos' ] 
+		then: [ :js |
+			js string should equal: 'var videos=document.getElementsByTagName(''video'');videos[0].play()' ]
+	
 ]
 
 { #category : #'instance creation' }
@@ -44,9 +59,41 @@ SuJSScript class >> htmlVideoSpeedExample [
 ]
 
 { #category : #'instance creation' }
+SuJSScript class >> htmlVideos [
+	
+	^ self new
+		template: 'var {videosVarName}=document.getElementsByTagName(''video'');';
+		yourself.
+]
+
+{ #category : #'instance creation' }
 SuJSScript class >> queryingSelector [
 	<description: '[Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)'>
 	^ self new
 		template: 'document.querySelector({selectors})';
+		yourself
+]
+
+{ #category : #'instance creation' }
+SuJSScript class >> videoPause [
+	<description: '[Docs](https://www.w3schools.com/jsref/met_video_play.asp)'>
+	^ self new
+		template: '{video}.pause()';
+		yourself
+]
+
+{ #category : #'instance creation' }
+SuJSScript class >> videoPlay [
+	<description: '[Docs](https://www.w3schools.com/jsref/met_video_play.asp)'>
+	^ self new
+		template: '{video}.play()';
+		yourself
+]
+
+{ #category : #accessing }
+SuJSScript >> + rhs [
+
+	^ self class new
+		template: self template, rhs template;
 		yourself
 ]
