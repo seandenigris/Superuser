@@ -108,8 +108,8 @@ SuRunnable >> prepareArguments: aCollection [
 SuRunnable >> printOn: aStream [
 	| s |
 	s := [ self string ]
-		on: KeyNotFound
-		do: [ :e | self template ].
+		on: Error
+		do: [ :e | 'Missing arguments: ', self template ].
 	aStream nextPutAll: s
 ]
 

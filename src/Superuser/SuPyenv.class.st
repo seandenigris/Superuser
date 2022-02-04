@@ -34,3 +34,31 @@ Class {
 	#superclass : #SuGenericUnixCommand,
 	#category : 'Superuser-Core'
 }
+
+{ #category : #accessing }
+SuPyenv class >> binary [
+	^ '/opt/homebrew/bin/pyenv' asFileReference
+]
+
+{ #category : #accessing }
+SuPyenv class >> installer [
+	^ self new
+		template: self binary fullName, ' install {version}';
+		yourself
+]
+
+{ #category : #accessing }
+SuPyenv class >> listingAvailableVersions [
+	^ self new
+		template: self binary fullName, ' install --list';
+		outputDecoder: [ :str | str lines allButFirst ];
+		yourself
+]
+
+{ #category : #accessing }
+SuPyenv class >> settingGlobalVersion [
+	^ self new
+		template: self binary fullName, ' global {version}';
+		outputDecoder: [ :str | str lines allButFirst ];
+		yourself
+]
