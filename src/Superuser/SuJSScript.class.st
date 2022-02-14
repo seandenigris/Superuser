@@ -97,3 +97,11 @@ SuJSScript >> + rhs [
 		template: self template, rhs template;
 		yourself
 ]
+
+{ #category : #accessing }
+SuJSScript >> -> aString [
+	
+	^ self class new
+		template: self template, '.', aString;
+		yourself
+]
