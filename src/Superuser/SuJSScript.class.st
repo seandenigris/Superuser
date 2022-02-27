@@ -94,7 +94,7 @@ SuJSScript class >> videoPlay [
 SuJSScript >> + rhs [
 
 	^ self class new
-		template: self template, rhs template;
+		template: (rhs suAddToJSScriptTemplate: self template);
 		yourself
 ]
 
@@ -104,4 +104,9 @@ SuJSScript >> -> aString [
 	^ self class new
 		template: self template, '.', aString;
 		yourself
+]
+
+{ #category : #accessing }
+SuJSScript >> suAddToJSScriptTemplate: aString [ 
+	^ aString, self template
 ]
