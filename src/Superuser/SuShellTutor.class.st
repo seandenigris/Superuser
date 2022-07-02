@@ -3,12 +3,12 @@ self open.
 "
 Class {
 	#name : #SuShellTutor,
-	#superclass : #ComposableModel,
+	#superclass : #SpPresenter,
 	#instVars : [
 		'tutorModel',
 		'shellModel'
 	],
-	#category : 'Superuser-Tutor'
+	#category : #'Superuser-Tutor'
 }
 
 { #category : #'as yet unclassified' }
