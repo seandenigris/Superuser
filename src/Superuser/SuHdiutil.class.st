@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-SuHdiutil class >> binary [
+SuHdiutil class >> binaryName [
 	^ 'hdiutil'
 ]
 

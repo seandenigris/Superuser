@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-SuGhostscript class >> binary [
+SuGhostscript class >> binaryName [
 	^ 'gs'
 ]
 

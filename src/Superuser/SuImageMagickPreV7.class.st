@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-SuImageMagickPreV7 class >> binary [
+SuImageMagickPreV7 class >> binaryName [
 	^ 'convert'
 ]
 

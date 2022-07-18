@@ -1,4 +1,7 @@
 "
+# Configuration
+If your binary for a subclass is not reachable via the default path, send {{gtMethod:SuGenericUnixCommand class>>#binaryFolder:}} 
+
 # Optional Arguments
 I utilize Pharo's {{gtMethod:String>>#format:}}, which requires all templated variables be supplied. One way to handle optional arguments is to override {{gtMethod:SuGenericUnixCommand>>#prepareArguments:}} to supply default values for optional arguments. Here is an example:{{gtMethod:SuImageMagick>>#prepareArguments:|expanded=true|label=an example}}
 # Output
@@ -26,10 +29,34 @@ Class {
 		'DefaultAdminUsername'
 	],
 	#classInstVars : [
-		'outputDecoder'
+		'binaryFolder'
 	],
 	#category : #'Superuser-Core'
 }
+
+{ #category : #accessing }
+SuGenericUnixCommand class >> binary [
+	^ self binaryFolder 
+		ifNil: [ self binaryName ]
+		ifNotNil: [ :folder | (folder / self binaryName) fullName ]
+]
+
+{ #category : #accessing }
+SuGenericUnixCommand class >> binaryFolder [
+
+	^ binaryFolder
+]
+
+{ #category : #accessing }
+SuGenericUnixCommand class >> binaryFolder: anObject [
+
+	binaryFolder := anObject
+]
+
+{ #category : #accessing }
+SuGenericUnixCommand class >> binaryName [
+	self subclassResponsibility
+]
 
 { #category : #private }
 SuGenericUnixCommand class >> defaultAdminUsername [
@@ -127,6 +154,14 @@ SuGenericUnixCommand class >> samplePNG_File [
 { #category : #persistence }
 SuGenericUnixCommand class >> spData [
 	^ DefaultAdminUsername
+]
+
+{ #category : #accessing }
+SuGenericUnixCommand class >> which [
+	| cmd |
+	cmd := ('which ', self binary) asSuCommand.
+	cmd run. "fail if non-zero return"
+	^ cmd output
 ]
 
 { #category : #'as yet unclassified' }

@@ -22,7 +22,7 @@ Class {
 }
 
 { #category : #accessing }
-SuRSync class >> binary [
+SuRSync class >> binaryName [
 
 	^ '/usr/bin/rsync' asFileReference.
 ]

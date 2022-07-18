@@ -42,7 +42,7 @@ Class {
 }
 
 { #category : #accessing }
-SuPyenv class >> binary [
+SuPyenv class >> binaryName [
 	^ '/opt/homebrew/bin/pyenv' asFileReference
 ]
 

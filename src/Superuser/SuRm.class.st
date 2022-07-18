@@ -9,7 +9,7 @@ Class {
 }
 
 { #category : #accessing }
-SuRm class >> binary [
+SuRm class >> binaryName [
 
 	^ '/bin/rm' asFileReference.
 ]

@@ -13,7 +13,7 @@ Class {
 }
 
 { #category : #accessing }
-SuImageMagick class >> binary [
+SuImageMagick class >> binaryName [
 	^ 'magick'
 ]
 
