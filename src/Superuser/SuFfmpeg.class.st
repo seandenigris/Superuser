@@ -7,13 +7,18 @@ Class {
 	#instVars : [
 		'input'
 	],
-	#category : 'Superuser-Core'
+	#category : #'Superuser-Core'
 }
+
+{ #category : #accessing }
+SuFfmpeg class >> binaryName [
+	^ 'ffmpeg'
+]
 
 { #category : #'instance creation' }
 SuFfmpeg class >> convertingVideoToAnimatedGIF [
 	^ self new
-		template: 'ffmpeg -i {inputFile} -vf "fps=10,scale={gifWidth}:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 10 - -loop 0 -layers optimize {outputFile}'; "Adapted from *https://superuser.com/a/556031*"
+		template: self binary, ' -i {inputFile} -vf "fps=10,scale={gifWidth}:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 10 - -loop 0 -layers optimize {outputFile}'; "Adapted from *https://superuser.com/a/556031*"
 		argumentAt: #outputFile put: (Tempfile withSuffix: '.gif');
 		yourself.
 	
@@ -45,6 +50,6 @@ SuFfmpeg >> extent [
 { #category : #accessing }
 SuFfmpeg >> initialize [
 	super initialize.
-	template := 'ffmpeg -i {inputFile}'.
+	template := self binary, ' -i {inputFile}'.
 	^ self
 ]

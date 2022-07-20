@@ -187,6 +187,11 @@ SuGenericUnixCommand >> basicCommandString [
 	^ super basicCommandString withBlanksCondensed
 ]
 
+{ #category : #accessing }
+SuGenericUnixCommand >> binary [
+	^ self class binary
+]
+
 { #category : #'command - compatibility' }
 SuGenericUnixCommand >> execute [
 	"This is the canonical message name from the GoF pattern, so provide it to reduce astonishment"
