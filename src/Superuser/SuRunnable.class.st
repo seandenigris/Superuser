@@ -94,7 +94,7 @@ SuRunnable >> ensureArgumentSourceFor: key [
 { #category : #accessing }
 SuRunnable >> gtCLIViewFor: aView [
 	<gtView>
-	^ aView text
+	^ aView textEditor
 		title: 'CLI';
 		text: self displayString
 ]
