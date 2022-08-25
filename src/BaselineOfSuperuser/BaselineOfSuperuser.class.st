@@ -40,7 +40,7 @@ BaselineOfSuperuser >> baseline: spec [
 			baseline: 'SimplePersistence' with: [
 				spec repository: 'github://seandenigris/Simple-Persistence' ]; 
 			baseline: 'Soup' with: [
-				spec repository: 'github://seandenigris/Soup-for-Pharo' ];
+				spec repository: 'github://seandenigris/Soup' ];
 			baseline: 'Tempfile' with: [
 				spec repository: 'github://seandenigris/TempfileSt' ];
 			package: #'Superuser' with: [
