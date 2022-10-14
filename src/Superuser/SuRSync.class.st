@@ -4,6 +4,11 @@ What is the difference between a backup and other syncing? Well, if you think ab
 
 # Permissions
 If you want to preserve ownership,  you should either run as root or as the owner of the target folder [via SO](https://stackoverflow.com/a/65844028)
+#Progess, Showing
+See [this ServerFault thread](https://serverfault.com/questions/219013/showing-total-progress-in-rsync-is-it-possible)
+# Security/SSH
+- [How to perform a secure rsync between servers across an unsecured network on ServerFault](https://serverfault.com/questions/12102/how-to-perform-a-secure-rsync-between-servers-across-an-unsecured-network) 
+- [rsync all files of remote machine over SSH without root user? on StackExchange](https://unix.stackexchange.com/questions/92123/rsync-all-files-of-remote-machine-over-ssh-without-root-user)
 
 # Spaces in path
 One method is to both quote the path and escape the spaces with backslashes. There are others. See [this thread](https://unix.stackexchange.com/questions/104618) for more info.
