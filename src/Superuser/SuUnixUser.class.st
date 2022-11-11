@@ -13,8 +13,10 @@ SuUnixUser class >> current [
 		yourself.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 SuUnixUser class >> exampleAdmin [
+	<gtExample>
+	
 	^ SuUnixUser new
 		name: 'admin';
 		yourself.
