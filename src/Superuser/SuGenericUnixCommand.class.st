@@ -60,7 +60,13 @@ SuGenericUnixCommand class >> binaryName [
 
 { #category : #private }
 SuGenericUnixCommand class >> defaultAdminUsername [
-	^ DefaultAdminUsername ifNil: [ self error: 'Default user name not set' ]
+	| prefFile |
+	DefaultAdminUsername ifNotNil: [ ^ DefaultAdminUsername ].
+	
+	prefFile := FileLocator preferences / 'pharo' / 'suDefaultAdminUsername'.
+	prefFile exists ifTrue: [ ^ prefFile contents trimmed ].
+	
+	self error: 'Default user name not set'
 ]
 
 { #category : #private }
