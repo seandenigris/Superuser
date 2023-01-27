@@ -3,7 +3,11 @@ Extension { #name : #AbstractFileReference }
 { #category : #'*Superuser' }
 AbstractFileReference >> asCliString [
 
-	^ self fullName surroundedByDoubleQuotes.
+	^ (self fullName includes: $!)
+		ifFalse: [ self fullName surroundedByDoubleQuotes ]
+		ifTrue: [ self fullName surroundedBySingleQuotes ]
+		
+	"Reference: https://unix.stackexchange.com/a/33340"
 ]
 
 { #category : #'*Superuser-private' }
