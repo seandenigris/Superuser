@@ -11,18 +11,18 @@ Class {
 		'optionLine',
 		'optionsSection'
 	],
-	#category : 'Superuser-Core'
+	#category : #'Superuser-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 SuRSyncHelpParser >> optionLine [
 
 	| shortForm longForm description |
-	shortForm := #space asParser, $, asParser negate plus flatten, $, asParser ==> #second.
-	#space asParser times: 5.
-	longForm := #space asParser negate plus flatten.
-	description := #lf asParser negate plus flatten.
-	^ optionLine := shortForm optional, #space asParser plus, longForm, #space asParser plus, description ==> [ :nodes |
+	shortForm := #space asPParser, $, asPParser negate plus flatten, $, asPParser ==> #second.
+	#space asPParser times: 5.
+	longForm := #space asPParser negate plus flatten.
+	description := #newline asPParser negate plus flatten.
+	^ optionLine := shortForm optional, #space asPParser plus, longForm, #space asPParser plus, description ==> [ :nodes |
 		SuFlag new
 			shortForm: nodes first;
 			longForm: nodes third;
@@ -30,16 +30,16 @@ SuRSyncHelpParser >> optionLine [
 			yourself ].
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 SuRSyncHelpParser >> optionsHeader [
 
-	^ optionsHeader := #lf asParser, 'Options' asParser, #lf asParser.
+	^ optionsHeader := #newline asPParser, 'Options' asPParser, #newline asPParser.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 SuRSyncHelpParser >> optionsSection [
 
-	^ optionsSection := optionsHeader flatten, optionLine plus, #lf asParser ==> #second.
+	^ optionsSection := optionsHeader flatten, optionLine plus, #newline asPParser ==> #second.
 ]
 
 { #category : #'as yet unclassified' }

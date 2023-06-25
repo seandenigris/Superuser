@@ -33,8 +33,6 @@ BaselineOfSuperuser >> baseline: spec [
 			
 			baseline: 'Magritte' with: [
 				spec repository: 'github://seandenigris/Magritte' ];
-			baseline: 'PetitParser2' with: [
-				spec repository: 'github://seandenigris/PetitParser2' ];
 			baseline: 'PharoEnhancements' with: [
 				spec repository: 'github://seandenigris/Pharo-Enhancements' ];
 			baseline: 'SimplePersistence' with: [
@@ -44,10 +42,16 @@ BaselineOfSuperuser >> baseline: spec [
 			baseline: 'Tempfile' with: [
 				spec repository: 'github://seandenigris/TempfileSt' ];
 			package: #'Superuser' with: [
-				spec requires: #(#Magritte #PetitParser2 #PharoEnhancements #SimplePersistence #Soup #Tempfile ). ] ].
+				spec requires: #(#Magritte #PharoEnhancements #SimplePersistence #Soup #Tempfile ). ] ].
 				
 	spec for: #GToolkit do: [ 
-		spec package: 'Superuser-GToolkit' with: [ spec requires: #(Superuser) ] ]
+		spec package: 'Superuser-GToolkit' with: [ spec requires: #(Superuser) ] ].
+		
+	spec for: #notGToolkit do: [ 
+		spec baseline: 'PetitParser2' with: [
+			spec repository: 'github://seandenigris/PetitParser2' ].
+		spec package: #Superuser with: [
+			spec requires: #('PetitParser2'). ] ]
 ]
 
 { #category : #accessing }
