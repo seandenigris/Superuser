@@ -44,15 +44,7 @@ AbstractFileReference >> md5 [
 { #category : #'*Superuser-Base' }
 AbstractFileReference >> sha256 [
 	
-	| tmpFile outputTokens |
-	tmpFile := FileReference newTempfile.
-	tmpFile parent ensureCreateDirectory.
-	Smalltalk tools shell new runAndWait: 'openssl dgst -sha256 "', self fullName, '" > "', tmpFile fullName, '"'.
-	outputTokens := Character space split: tmpFile contents trimRight.
-	tmpFile delete.
-	^ outputTokens last.
-	
-	"Adapted from https://apple.stackexchange.com/a/230919"
+	^ SuOpenSSL new sha256: self
 ]
 
 { #category : #'*Superuser' }
