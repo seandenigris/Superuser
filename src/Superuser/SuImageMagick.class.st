@@ -1,15 +1,15 @@
 "
 !Installation
 On Mac, you can install via Homebrew like this:
-[[[language=shell
+```shell
 brew install imagemagick
-]]]
+```
 
 "
 Class {
 	#name : #SuImageMagick,
 	#superclass : #SuGenericUnixCommand,
-	#category : 'Superuser-Core'
+	#category : #'Superuser-Core'
 }
 
 { #category : #accessing }
