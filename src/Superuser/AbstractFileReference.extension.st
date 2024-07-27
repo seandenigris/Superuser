@@ -44,7 +44,13 @@ AbstractFileReference >> md5 [
 { #category : #'*Superuser-Base' }
 AbstractFileReference >> sha256 [
 	
-	^ SuOpenSSL new sha256: self
+	^ SuOpenSSL sha256: self
+]
+
+{ #category : #'*Superuser-Base' }
+AbstractFileReference >> sha512 [
+	
+	^ SuOpenSSL sha512: self
 ]
 
 { #category : #'*Superuser' }

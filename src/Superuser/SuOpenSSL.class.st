@@ -12,6 +12,23 @@ SuOpenSSL class >> binaryName [
 	^ 'openssl'
 ]
 
+{ #category : #accessing }
+SuOpenSSL class >> digest [
+	
+	| outputFile |
+	outputFile := Tempfile new.
+	^ self new
+		template: self binary, ' dgst -{digest} {inputFile} > {outputFile}';
+		argumentAt: #outputFile put: outputFile;
+		outputDecoder: [ :output |
+			| outputTokens |
+			outputTokens := Character space split: outputFile contents trimRight.
+			outputTokens last. ];
+		yourself.
+	
+	"Adapted from https://apple.stackexchange.com/a/230919"
+]
+
 { #category : #utilties }
 SuOpenSSL class >> isVulnerableToHeartbleed [
 	"https://www.openssl.org/news/secadv_20140407.txt"
@@ -25,17 +42,19 @@ SuOpenSSL class >> isVulnerableToHeartbleed [
 ]
 
 { #category : #accessing }
-SuOpenSSL >> sha256: aFileReference [
+SuOpenSSL class >> sha256: aFileReference [
 	
-	| outputTokens outputFile |
-	outputFile := Tempfile new.
-	self
-		template: self binary, ' dgst -sha256 {inputFile} > {outputFile}';
+	^ self digest
 		argumentAt: #inputFile put: aFileReference;
-		argumentAt: #outputFile put: outputFile;
-		run.
-	outputTokens := Character space split: outputFile contents trimRight.
-	^ outputTokens last.
+		argumentAt: #digest put: 'sha256';
+		output
+]
+
+{ #category : #accessing }
+SuOpenSSL class >> sha512: aFileReference [
 	
-	"Adapted from https://apple.stackexchange.com/a/230919"
+	^ self digest
+		argumentAt: #inputFile put: aFileReference;
+		argumentAt: #digest put: 'sha512';
+		output
 ]
