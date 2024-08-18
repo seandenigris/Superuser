@@ -33,6 +33,8 @@ BaselineOfSuperuser >> baseline: spec [
 			
 			baseline: 'Magritte' with: [
 				spec repository: 'github://seandenigris/Magritte' ];
+			baseline: 'OSShell' with: [ "Cross-platform process handling on Pharo and GT"
+				spec repository: 'github://seandenigris/Pharo-Shell' ];
 			baseline: 'PharoEnhancements' with: [
 				spec repository: 'github://seandenigris/Pharo-Enhancements' ];
 			baseline: 'SimplePersistence' with: [
@@ -42,7 +44,7 @@ BaselineOfSuperuser >> baseline: spec [
 			baseline: 'Tempfile' with: [
 				spec repository: 'github://seandenigris/TempfileSt' ];
 			package: #'Superuser' with: [
-				spec requires: #(#Magritte #PharoEnhancements #SimplePersistence #Soup #Tempfile ). ] ].
+				spec requires: #(#Magritte #OSShell #PharoEnhancements #SimplePersistence #Soup #Tempfile ). ] ].
 				
 	spec for: #GToolkit do: [ 
 		spec package: 'Superuser-GToolkit' with: [ spec requires: #(Superuser) ] ].

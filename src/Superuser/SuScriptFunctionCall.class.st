@@ -103,12 +103,10 @@ SuScriptFunctionCall >> functionName: anObject [
 { #category : #accessing }
 SuScriptFunctionCall >> output [
 
-	OSSUnixSubprocess new
-		shellCommand: self commandString;
-		redirectStderr;
-		redirectStdout;
-		runAndWaitOnExitDo: [ :command :outString :errString | 
-			command isSuccess ifFalse: [ self error: 'tesseract failed with: ' , errString ].
+	OSShell new
+		shellCommand: self commandString
+		runAndWaitOnExitDo: [ :result :outString :errString | 
+			result isSuccess ifFalse: [ self error: 'tesseract failed with: ' , errString ].
 			^ outString ].
 ]
 
