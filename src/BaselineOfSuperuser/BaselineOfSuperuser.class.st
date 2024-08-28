@@ -31,29 +31,29 @@ BaselineOfSuperuser >> baseline: spec [
 	spec for: #'common' do: [
 		spec 
 			
-			baseline: 'Magritte' with: [
+			baseline: #'Magritte' with: [
 				spec repository: 'github://seandenigris/Magritte' ];
-			baseline: 'OSShell' with: [ "Cross-platform process handling on Pharo and GT"
+			baseline: #'OSShell' with: [ "Cross-platform process handling on Pharo and GT"
 				spec repository: 'github://seandenigris/Pharo-Shell' ];
-			baseline: 'PharoEnhancements' with: [
+			baseline: #'PharoEnhancements' with: [
 				spec repository: 'github://seandenigris/Pharo-Enhancements' ];
-			baseline: 'SimplePersistence' with: [
+			baseline: #'SimplePersistence' with: [
 				spec repository: 'github://seandenigris/Simple-Persistence' ]; 
-			baseline: 'Soup' with: [
+			baseline: #'Soup' with: [
 				spec repository: 'github://seandenigris/Soup' ];
-			baseline: 'Tempfile' with: [
+			baseline: #'Tempfile' with: [
 				spec repository: 'github://seandenigris/TempfileSt' ];
 			package: #'Superuser' with: [
 				spec requires: #(#Magritte #OSShell #PharoEnhancements #SimplePersistence #Soup #Tempfile ). ] ].
 				
 	spec for: #GToolkit do: [ 
-		spec package: 'Superuser-GToolkit' with: [ spec requires: #(Superuser) ] ].
+		spec package: #'Superuser-GToolkit' with: [ spec requires: #(Superuser) ] ].
 		
 	spec for: #notGToolkit do: [ 
-		spec baseline: 'PetitParser2' with: [
+		spec baseline: #'PetitParser2' with: [
 			spec repository: 'github://seandenigris/PetitParser2' ].
 		spec package: #Superuser with: [
-			spec requires: #('PetitParser2'). ] ]
+			spec requires: #(PetitParser2). ] ]
 ]
 
 { #category : #accessing }
