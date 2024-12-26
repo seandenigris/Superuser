@@ -60,7 +60,10 @@ SuRunnable >> basicCommandString [
 	| preparedArguments |
 	preparedArguments := self argumentSource copy.
 	self prepareArguments: preparedArguments.
-	^ self template format: preparedArguments
+	
+	^ preparedArguments 
+		ifNotEmpty: [ self template format: preparedArguments ]
+		ifEmpty: [ self template ]
 ]
 
 { #category : #copying }
