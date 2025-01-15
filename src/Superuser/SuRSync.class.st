@@ -32,6 +32,46 @@ SuRSync class >> binaryName [
 	^ '/usr/bin/rsync' asFileReference.
 ]
 
+{ #category : #utilities }
+SuRSync class >> copyFilesOutput: aFile from: sourceFolder to: targetFolder [
+	"
+		Sometimes it seems that certain file checksums will not be equal after being copied by rsync. This is a utility to manually copy just those files.
+
+		aFile - rsync output, run with `-vc`
+	"
+
+	| resultLines lineStr issues |
+	resultLines := aFile contents readStreamDo: [ :str |
+
+	lineStr := ZnFastLineReader on: str.
+	[ lineStr nextLine endsWith: 'files to consider' ] whileFalse.
+	
+	OrderedCollection streamContents: [ :colStr |
+		| line |
+		line := lineStr nextLine.
+		(line beginsWith: '.') ifFalse: [ colStr nextPut: line ].
+		[
+			line := lineStr nextLine.
+			line isEmpty 
+		] 
+			whileFalse: [ colStr nextPut: line ] ] ].
+			
+	issues := resultLines reject: [ :line |
+		| ref |
+		ref := sourceFolder / line.
+		ref isDirectory or: [ ref filename beginsWith: '.' ] ].
+	
+	issues do: [ :e |
+		(targetFolder / e) ensureDelete.
+		sourceFolder / e copyTo: targetFolder / e ].
+		
+	"Primitive report:
+	issues collect: [ :e |
+		md5s := (sourceFolder / e) md5.
+		md5t := (targetFolder / e) md5.
+		{ md5s = md5t. md5s. md5t } ]"
+]
+
 { #category : #accessing }
 SuRSync class >> shortHelp [
 
