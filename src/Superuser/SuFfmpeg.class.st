@@ -38,15 +38,16 @@ SuFfmpeg class >> example [
 
 { #category : #accessing }
 SuFfmpeg >> extent [
-	| info matches |
+	| info matches width |
 	info := self
 		redirectErrorsToOutput;
 		output.
-	matches := info allRegexMatches: ' ([1-9]\d*)x(\d+) '.
+	matches := info allRegexMatches: ', ([1-9]\d*)x(\d+)'.
 	self assert: matches size equals: 1.
-	^ (matches first copyUpTo: $x) trimLeft asNumber @ (matches first copyAfter: $x) trimRight asNumber.
+	width := ((matches first copyUpTo: $x) allButFirst: 2) asNumber.
+	^ width @ (matches first copyAfter: $x) asNumber.
 	
-	"Implementation note: we match spaces at the start and end, only to trim them again, to account for an edge case where the input filename matches the pattern"
+	"Implementation note: we match unrelated characters at the start and end, only to trim them again, to account for an edge case where the input filename matches the pattern"
 ]
 
 { #category : #accessing }
