@@ -1,6 +1,6 @@
-Extension { #name : #Number }
+Extension { #name : 'Number' }
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 Number >> suForCommand [
 
 	^ self asString.

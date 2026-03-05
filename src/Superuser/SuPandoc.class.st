@@ -1,15 +1,17 @@
 Class {
-	#name : #SuPandoc,
-	#superclass : #SuGenericUnixCommand,
-	#category : #'Superuser-Core'
+	#name : 'SuPandoc',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuPandoc class >> binaryName [
 	^ 'pandoc'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuPandoc class >> markdownToRTF [
 
 	^ self new
@@ -17,7 +19,7 @@ SuPandoc class >> markdownToRTF [
 		yourself.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuPandoc class >> rtfToMarkdown [
 
 	^ self new

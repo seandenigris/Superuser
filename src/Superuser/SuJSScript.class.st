@@ -3,12 +3,14 @@
 This piecemeal approach could explode interface, requiring a real composable model, but works for now for a few common cases
 "
 Class {
-	#name : #SuJSScript,
-	#superclass : #SuRunnable,
-	#category : #'Superuser-Core'
+	#name : 'SuJSScript',
+	#superclass : 'SuRunnable',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuJSScript class >> clickQueriedElement [
 	<description: '[Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)'>
 	^ self new
@@ -16,7 +18,7 @@ SuJSScript class >> clickQueriedElement [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuJSScript class >> exampleCombinedScript [
 	<gtExample>
 	
@@ -31,7 +33,7 @@ SuJSScript class >> exampleCombinedScript [
 	
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuJSScript class >> htmlVideoSpeed [
 	<apiDocumentation>
 	<description: 'Set the speed of all HTML5 ==<video>== elements. 1 is regular speed. See the ==playbackRate== property *docs >https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/playbackRate* for more info.'>
@@ -46,7 +48,7 @@ SuJSScript class >> htmlVideoSpeed [
 Adapted from *this Quora answer>https://www.quora.com/Is-there-any-way-to-watch-Facebook-videos-at-double-the-speed*. There is a slight variation recommended *on SO>https://stackoverflow.com/a/44158819/424245* using querySelectorAll instead of getElementsByTagName if this ever must be revisited."
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuJSScript class >> htmlVideoSpeedExample [
 	<gtExample>
 	| result |
@@ -58,7 +60,7 @@ SuJSScript class >> htmlVideoSpeedExample [
 	^ result
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuJSScript class >> htmlVideos [
 	
 	^ self new
@@ -66,7 +68,7 @@ SuJSScript class >> htmlVideos [
 		yourself.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuJSScript class >> queryingSelector [
 	<description: '[Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)'>
 	^ self new
@@ -74,7 +76,7 @@ SuJSScript class >> queryingSelector [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuJSScript class >> videoPause [
 	<description: '[Docs](https://www.w3schools.com/jsref/met_video_play.asp)'>
 	^ self new
@@ -82,7 +84,7 @@ SuJSScript class >> videoPause [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuJSScript class >> videoPlay [
 	<description: '[Docs](https://www.w3schools.com/jsref/met_video_play.asp)'>
 	^ self new
@@ -90,7 +92,7 @@ SuJSScript class >> videoPlay [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuJSScript >> + rhs [
 
 	^ self class new
@@ -98,7 +100,7 @@ SuJSScript >> + rhs [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuJSScript >> -> aString [
 	
 	^ self class new
@@ -106,7 +108,7 @@ SuJSScript >> -> aString [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuJSScript >> suAddToJSScriptTemplate: aString [ 
 	^ aString, self template
 ]

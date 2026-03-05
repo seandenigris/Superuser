@@ -8,18 +8,20 @@ The quickest way is to grab a *release binary>https://github.com/dmulholl/mp3cat
 1. There is also the Tom Clegg version, which seems to have an incompatible API, but can be installed on Mac via Homebrew. 
 "
 Class {
-	#name : #SuMp3cat,
-	#superclass : #SuGenericUnixCommand,
+	#name : 'SuMp3cat',
+	#superclass : 'SuGenericUnixCommand',
 	#instVars : [
 		'source',
 		'target',
 		'output',
 		'input'
 	],
-	#category : 'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuMp3cat class >> exampleFiles [
 	<gtExample>
 	| result |
@@ -30,7 +32,7 @@ SuMp3cat class >> exampleFiles [
 	^ result
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuMp3cat class >> exampleFolder [
 	<gtExample>
 	| result |
@@ -41,7 +43,7 @@ SuMp3cat class >> exampleFolder [
 	^ result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuMp3cat >> basicCommandString [
 	| varClose variable tokens desc |
 	desc := self magritteDescription.
@@ -55,23 +57,23 @@ SuMp3cat >> basicCommandString [
 	^ String streamContents: [ :s | tokens do: [ :e | s << e ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuMp3cat >> initialize [
 	super initialize.
 	template := 'mp3cat {input} --out {output}'.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuMp3cat >> input [
 	^ self maLazyInstVarUsing: self inputDescription
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuMp3cat >> input: anAbstractFileReference [
 	input := anAbstractFileReference
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : 'magritte-accessing' }
 SuMp3cat >> inputDescription [
 	<magritteDescription>
 	^ MAToManyRelationDescription new
@@ -82,7 +84,7 @@ SuMp3cat >> inputDescription [
 		yourself
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : 'magritte-accessing' }
 SuMp3cat >> inputToString: anObject [
 	| isFile |
 	isFile := (anObject isKindOf: Collection) not.
@@ -91,17 +93,17 @@ SuMp3cat >> inputToString: anObject [
 			ifFalse: [ anObject suForCommand ]	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuMp3cat >> output [
 	^ self maLazyInstVarUsing: self outputDescription
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuMp3cat >> output: anAbstractFileReference [
 	output := anAbstractFileReference
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : 'magritte-accessing' }
 SuMp3cat >> outputDescription [
 	<magritteDescription>
 	^ MAFileDescription new

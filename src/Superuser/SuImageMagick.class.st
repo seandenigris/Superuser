@@ -7,17 +7,19 @@ brew install imagemagick
 
 "
 Class {
-	#name : #SuImageMagick,
-	#superclass : #SuGenericUnixCommand,
-	#category : #'Superuser-Core'
+	#name : 'SuImageMagick',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuImageMagick class >> binaryName [
 	^ 'magick'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuImageMagick class >> convertForOCR [
 
 	^ self new
@@ -25,7 +27,7 @@ SuImageMagick class >> convertForOCR [
 		yourself.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuImageMagick class >> crop [
 
 	^ self new
@@ -33,7 +35,7 @@ SuImageMagick class >> crop [
 		yourself.
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 SuImageMagick class >> crop: inputFile to: aRectangle as: outputFile [
 
 	^ self crop
@@ -46,7 +48,7 @@ SuImageMagick class >> crop: inputFile to: aRectangle as: outputFile [
 		run.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuImageMagick >> prepareArguments: aCollection [
 	| pageRangeString |
 	"Page range is optional, but format: doesn't handle optional variables, so we add the right thing here either way"

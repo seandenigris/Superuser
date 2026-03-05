@@ -1,15 +1,17 @@
 Class {
-	#name : #SuImageMagickPreV7,
-	#superclass : #SuImageMagick,
-	#category : 'Superuser-Core'
+	#name : 'SuImageMagickPreV7',
+	#superclass : 'SuImageMagick',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuImageMagickPreV7 class >> binaryName [
 	^ 'convert'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuImageMagickPreV7 class >> convertForOCR [
 
 	^ self new

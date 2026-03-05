@@ -1,10 +1,12 @@
 Class {
-	#name : #SuSmalltalkCIExamples,
-	#superclass : #Object,
-	#category : #'Superuser-SmalltalkCI'
+	#name : 'SuSmalltalkCIExamples',
+	#superclass : 'Object',
+	#category : 'Superuser-SmalltalkCI',
+	#package : 'Superuser',
+	#tag : 'SmalltalkCI'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> architectureARM [
 	<gtExample>
 	
@@ -18,7 +20,7 @@ SuSmalltalkCIExamples class >> architectureARM [
 			fcn output trimmed should equal: 'aarch64' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> architectureIntel [
 	<gtExample>
 	
@@ -32,7 +34,7 @@ SuSmalltalkCIExamples class >> architectureIntel [
 			fcn output trimmed should equal: 'x86_64' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> archiveFilenameLinuxARM [
 	<gtExample>
 	
@@ -47,7 +49,7 @@ SuSmalltalkCIExamples class >> archiveFilenameLinuxARM [
 			fcn output trimmed should equal: 'https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2574/GlamorousToolkit-Linux-aarch64-v0.8.2574.zip' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> archiveFilenameLinuxIntel [
 	<gtExample>
 	
@@ -62,7 +64,7 @@ SuSmalltalkCIExamples class >> archiveFilenameLinuxIntel [
 			fcn output trimmed should equal: 'https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2574/GlamorousToolkit-Linux-x86_64-v0.8.2574.zip' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> archiveFilenameMacARM [
 	<gtExample>
 	
@@ -77,7 +79,7 @@ SuSmalltalkCIExamples class >> archiveFilenameMacARM [
 			fcn output trimmed should equal: 'https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2574/GlamorousToolkit-MacOS-aarch64-v0.8.2574.zip' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> archiveFilenameMacIntel [
 	<gtExample>
 	
@@ -92,7 +94,7 @@ SuSmalltalkCIExamples class >> archiveFilenameMacIntel [
 			fcn output trimmed should equal: 'https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2574/GlamorousToolkit-MacOS-x86_64-v0.8.2574.zip' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> archiveFilenameWindowsARMUnsupported [
 	<gtExample>
 	
@@ -106,7 +108,7 @@ SuSmalltalkCIExamples class >> archiveFilenameWindowsARMUnsupported [
 			"should error" ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> archiveFilenameWindowsIntel [
 	<gtExample>
 	
@@ -121,7 +123,7 @@ SuSmalltalkCIExamples class >> archiveFilenameWindowsIntel [
 			fcn output trimmed should equal: 'https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2574/GlamorousToolkit-Windows-x86_64-v0.8.2574.zip' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> getReleaseVersion [
 	<gtExample>
 	
@@ -132,7 +134,7 @@ SuSmalltalkCIExamples class >> getReleaseVersion [
 			fcn output trimmed should beginWith: 'v0.8.' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> given: givenBlock in: file whenCalledWithArguments: aCollection then: thenBlock [
 
 	| call |
@@ -148,7 +150,7 @@ SuSmalltalkCIExamples class >> given: givenBlock in: file whenCalledWithArgument
 	^ call
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> given: givenBlock whenCalledWithArguments: aCollection then: thenBlock [
 	^ self
 		given: givenBlock
@@ -157,7 +159,7 @@ SuSmalltalkCIExamples class >> given: givenBlock whenCalledWithArguments: aColle
 		then: thenBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> gtoolkitLatestReleaseJSON [
 
 	^ ZnClient new
@@ -167,7 +169,7 @@ SuSmalltalkCIExamples class >> gtoolkitLatestReleaseJSON [
 	"Adapted from https://fabianlee.org/2021/02/16/bash-determining-latest-github-release-tag-and-version/"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> hardwarePlatform [
 	<gtExample>
 	
@@ -178,13 +180,13 @@ SuSmalltalkCIExamples class >> hardwarePlatform [
 			fcn output trimmed should equal: 'arm64' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> mainScript [
 
 	^ SuSmalltalkCICall repositoryFolder / 'gtoolkit' / 'run.sh'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> vmPathLinux [
 	<gtExample>
 	
@@ -198,7 +200,7 @@ SuSmalltalkCIExamples class >> vmPathLinux [
 			fcn output trimmed should equal: 'bin/GlamorousToolkit-cli' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> vmPathMac [
 	<gtExample>
 	
@@ -212,7 +214,7 @@ SuSmalltalkCIExamples class >> vmPathMac [
 			fcn output trimmed should equal: 'GlamorousToolkit.app/Contents/MacOS/GlamorousToolkit-cli' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCIExamples class >> vmPathWindows [
 	<gtExample>
 	

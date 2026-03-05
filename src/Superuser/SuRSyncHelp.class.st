@@ -2,12 +2,14 @@
 self new contents
 "
 Class {
-	#name : #SuRSyncHelp,
-	#superclass : #Object,
-	#category : 'Superuser-Core'
+	#name : 'SuRSyncHelp',
+	#superclass : 'Object',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelp >> contents [
 
 	| tmpOutputFile |
@@ -16,7 +18,7 @@ SuRSyncHelp >> contents [
 	^ tmpOutputFile contents.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelp >> optionDescriptionLines [
 
 	| headerStripped |
@@ -24,7 +26,7 @@ SuRSyncHelp >> optionDescriptionLines [
 	^ headerStripped copyUpTo: ''.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelp >> optionDescriptions [
 
 	| lines matcher |

@@ -1,10 +1,12 @@
 Class {
-	#name : #SuCommandSyntaxSpecification,
-	#superclass : #TestCase,
-	#category : 'Superuser-Core'
+	#name : 'SuCommandSyntaxSpecification',
+	#superclass : 'TestCase',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #asserting }
+{ #category : 'asserting' }
 SuCommandSyntaxSpecification >> assert: actualCollection hasEqualElements: expectedCollection [
 
 	self
@@ -14,7 +16,7 @@ SuCommandSyntaxSpecification >> assert: actualCollection hasEqualElements: expec
 			'Expected ', expectedCollection printString allButFirst, ' but got ', actualDescription ].
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuCommandSyntaxSpecification >> test1 [
 
 	| flag syntax completions |
@@ -32,7 +34,7 @@ SuCommandSyntaxSpecification >> test1 [
 	self assert: completions hasEqualElements: #('-v' '--verbose').
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuCommandSyntaxSpecification >> test2 [
 
 	| syntax completions vFlag qFlag |
@@ -54,7 +56,7 @@ SuCommandSyntaxSpecification >> test2 [
 	self assert: completions hasEqualElements: #('-v' '--verbose' '-q' '--quiet').
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuCommandSyntaxSpecification >> testFlagNoLongForm [
 
 	| syntax completions flag |

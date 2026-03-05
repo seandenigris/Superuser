@@ -1,15 +1,17 @@
 Class {
-	#name : #SuLn,
-	#superclass : #SuGenericUnixCommand,
+	#name : 'SuLn',
+	#superclass : 'SuGenericUnixCommand',
 	#instVars : [
 		'source',
 		'link',
 		'original'
 	],
-	#category : 'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuLn class >> example [
 	<gtExample>
 	| original link result |
@@ -23,30 +25,30 @@ SuLn class >> example [
 	self assert: (link / original base) exists.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuLn >> argumentSource [
 	^ {
 		#link -> self link.
 		#original -> self original } asDictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuLn >> initialize [
 	super initialize.
 	template := 'ln -s {original} {link}'.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuLn >> link [
 	^ self maLazyInstVarUsing: self linkDescription
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuLn >> link: file [
 	link := file
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : 'magritte-accessing' }
 SuLn >> linkDescription [
 	<magritteDescription>
 	^ MAFileDescription new
@@ -56,17 +58,17 @@ SuLn >> linkDescription [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuLn >> original [
 	^ self maLazyInstVarUsing: self originalDescription
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuLn >> original: file [
 	original := file
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : 'magritte-accessing' }
 SuLn >> originalDescription [
 	<magritteDescription>
 	^ MAFileDescription new

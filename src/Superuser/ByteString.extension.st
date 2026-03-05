@@ -1,6 +1,6 @@
-Extension { #name : #ByteString }
+Extension { #name : 'ByteString' }
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 ByteString >> suAddToJSScriptTemplate: aString [ 
 	^ aString, ' ', self
 ]

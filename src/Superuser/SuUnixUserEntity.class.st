@@ -1,24 +1,26 @@
 Class {
-	#name : #SuUnixUserEntity,
-	#superclass : #Object,
+	#name : 'SuUnixUserEntity',
+	#superclass : 'Object',
 	#instVars : [
 		'name',
 		'id'
 	],
-	#category : 'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuUnixUserEntity >> id [
 	^ self maLazyInstVarUsing: self idDescription
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuUnixUserEntity >> id: aNumber [
 	id := aNumber
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : 'magritte-accessing' }
 SuUnixUserEntity >> idDescription [
 	<magritteDescription>
 	^ MANumberDescription new
@@ -27,17 +29,17 @@ SuUnixUserEntity >> idDescription [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuUnixUserEntity >> name [
 	^ self maLazyInstVarUsing: self nameDescription
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuUnixUserEntity >> name: aString [
 	name := aString
 ]
 
-{ #category : #'magritte-accessing' }
+{ #category : 'magritte-accessing' }
 SuUnixUserEntity >> nameDescription [
 	<magritteDescription>
 	^ MAStringDescription new
@@ -46,7 +48,7 @@ SuUnixUserEntity >> nameDescription [
 		yourself
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 SuUnixUserEntity >> printOn: aStream [
 
 	aStream

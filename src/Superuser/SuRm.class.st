@@ -3,24 +3,26 @@ A RSync is xxxxxxxxx.
 
 "
 Class {
-	#name : #SuRm,
-	#superclass : #SuUnixCommand,
-	#category : 'Superuser-Core'
+	#name : 'SuRm',
+	#superclass : 'SuUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRm class >> binaryName [
 
 	^ '/bin/rm' asFileReference.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRm class >> shortHelp [
 
 	^ 'rm - unlink file'.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRm class >> syntax [
 
 	| flags syntax |

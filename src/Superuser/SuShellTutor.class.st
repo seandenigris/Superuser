@@ -2,22 +2,24 @@
 self open.
 "
 Class {
-	#name : #SuShellTutor,
-	#superclass : #SpPresenter,
+	#name : 'SuShellTutor',
+	#superclass : 'SpPresenter',
 	#instVars : [
 		'tutorModel',
 		'shellModel'
 	],
-	#category : #'Superuser-Tutor'
+	#category : 'Superuser-Tutor',
+	#package : 'Superuser',
+	#tag : 'Tutor'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuShellTutor class >> open [
 
 	^ self new openWithSpec.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuShellTutor class >> spec [
 	<spec: #default>
 
@@ -29,25 +31,25 @@ SuShellTutor class >> spec [
 			yourself.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuShellTutor >> commandNamed: aString [ 
 
 	^ SuUnixCommand subclasses detect: [ :e | e binary basename = aString ].
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuShellTutor >> commands [
 
 	^ SuUnixCommand subclasses.
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SuShellTutor >> initializePresenter [
 
 	shellModel whenTextChanged: [ :text | self showHelpFor: text ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SuShellTutor >> initializeWidgets [
 
 	shellModel := self newTextInput
@@ -56,12 +58,12 @@ SuShellTutor >> initializeWidgets [
 	tutorModel := self newText.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuShellTutor >> shellModel [
 	^ shellModel
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuShellTutor >> showHelpFor: aString [ 
 
 	| tokens help |
@@ -80,7 +82,7 @@ SuShellTutor >> showHelpFor: aString [
 	tutorModel text: help.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuShellTutor >> tutorModel [
 	^ tutorModel
 ]

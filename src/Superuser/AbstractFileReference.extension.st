@@ -1,6 +1,6 @@
-Extension { #name : #AbstractFileReference }
+Extension { #name : 'AbstractFileReference' }
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 AbstractFileReference >> asCliString [
 
 	^ (self fullName includes: $!)
@@ -10,12 +10,12 @@ AbstractFileReference >> asCliString [
 	"Reference: https://unix.stackexchange.com/a/33340"
 ]
 
-{ #category : #'*Superuser-private' }
+{ #category : '*Superuser-private' }
 AbstractFileReference >> checksums [
 	^ self contents
 ]
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 AbstractFileReference >> isMD5Equal: aReference [
 	^ self md5 = aReference md5
 	
@@ -29,7 +29,7 @@ AbstractFileReference >> isMD5Equal: aReference [
 "
 ]
 
-{ #category : #'*Superuser-Base' }
+{ #category : '*Superuser-Base' }
 AbstractFileReference >> md5 [
 	
 	| tmpFile outputTokens |
@@ -41,25 +41,25 @@ AbstractFileReference >> md5 [
 	^ outputTokens last.
 ]
 
-{ #category : #'*Superuser-Base' }
+{ #category : '*Superuser-Base' }
 AbstractFileReference >> sha256 [
 	
 	^ SuOpenSSL sha256: self
 ]
 
-{ #category : #'*Superuser-Base' }
+{ #category : '*Superuser-Base' }
 AbstractFileReference >> sha512 [
 	
 	^ SuOpenSSL sha512: self
 ]
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 AbstractFileReference >> suForCommand [
 
 	^ self asCliString.
 ]
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 AbstractFileReference >> suOpenWith: application [
 	SuGenericUnixCommand new
 		template: 'open -a "{application}" "{file}"';
@@ -68,7 +68,7 @@ AbstractFileReference >> suOpenWith: application [
 		run.
 ]
 
-{ #category : #'*Superuser-Base' }
+{ #category : '*Superuser-Base' }
 AbstractFileReference >> verifySha256Equals: checksumSource [
 	| template outputFile command checksums checksumLine |
 	checksums := checksumSource checksums.

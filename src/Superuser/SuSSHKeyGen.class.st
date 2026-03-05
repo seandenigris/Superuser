@@ -1,13 +1,15 @@
 Class {
-	#name : #SuSSHKeyGen,
-	#superclass : #SuGenericUnixCommand,
+	#name : 'SuSSHKeyGen',
+	#superclass : 'SuGenericUnixCommand',
 	#instVars : [
 		'input'
 	],
-	#category : #'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuSSHKeyGen class >> example [
 	<gtExample>
 	| result |
@@ -19,7 +21,7 @@ SuSSHKeyGen class >> example [
 	^ result
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuSSHKeyGen class >> knownPublicKeyFingerprintForHost: aString [
 
 	| result |

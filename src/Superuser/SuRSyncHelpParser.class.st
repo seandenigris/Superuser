@@ -4,17 +4,19 @@ Options
 '
 "
 Class {
-	#name : #SuRSyncHelpParser,
-	#superclass : #PP2CompositeNode,
+	#name : 'SuRSyncHelpParser',
+	#superclass : 'PP2CompositeNode',
 	#instVars : [
 		'optionsHeader',
 		'optionLine',
 		'optionsSection'
 	],
-	#category : #'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRSyncHelpParser >> optionLine [
 
 	| shortForm longForm description |
@@ -30,19 +32,19 @@ SuRSyncHelpParser >> optionLine [
 			yourself ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRSyncHelpParser >> optionsHeader [
 
 	^ optionsHeader := #newline asPParser, 'Options' asPParser, #newline asPParser.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRSyncHelpParser >> optionsSection [
 
 	^ optionsSection := optionsHeader flatten, optionLine plus, #newline asPParser ==> #second.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParser >> start [
 
 	^ optionsHeader negate star, optionsSection ==> #second.

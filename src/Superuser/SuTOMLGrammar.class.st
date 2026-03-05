@@ -1,6 +1,6 @@
 Class {
-	#name : #SuTOMLGrammar,
-	#superclass : #PP2CompositeNode,
+	#name : 'SuTOMLGrammar',
+	#superclass : 'PP2CompositeNode',
 	#instVars : [
 		'line',
 		'comment',
@@ -13,10 +13,12 @@ Class {
 		'number',
 		'booolean'
 	],
-	#category : #'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuTOMLGrammar class >> example [
 	<gtExample>
 	
@@ -30,66 +32,66 @@ dob = 1979 # First class dates
 		then: []
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> association [
 
 	^ ((#digit asPParser / #letter asPParser), $= asPParser negate plus) flatten trim, $= asPParser, space plus, associationValue.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> associationValue [
 
 	^ string / number /booolean
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> booolean [
 
 	^ 'true' asPParser ==> [ true ] / 'false' asPParser  ==> [ false ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> comment [
 
 	^ $# asPParser, #newline asPParser negate plus flatten ==> #second
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> data [
 
 	^ association / header.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> header [
 
 	^ $[ asPParser, $] asPParser negate plus flatten, $] asPParser ==> #second
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> line [
 
 	^ data optional, space star, comment optional ==> [ :n | { n first. n last } ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> number [
 
 	^ #digit asPParser plus flatten
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> space [
 
 	^ Character space asPParser / Character tab asPParser
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> start [
 	^ line, (#newline asPParser plus, line ==> #second) star
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuTOMLGrammar >> string [
 
 	^ $" asPParser, $" asPParser negate star flatten, $" asPParser

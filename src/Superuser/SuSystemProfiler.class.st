@@ -1,10 +1,12 @@
 Class {
-	#name : #SuSystemProfiler,
-	#superclass : #SuGenericUnixCommand,
-	#category : #'Superuser-Core'
+	#name : 'SuSystemProfiler',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuSystemProfiler class >> acChargerWatts [
 
 	^ self new
@@ -26,12 +28,12 @@ SuSystemProfiler class >> acChargerWatts [
 	"CLI adapted from https://apple.stackexchange.com/a/16519"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSystemProfiler class >> binaryName [
 	^ 'system_profiler'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuSystemProfiler class >> convertForOCR [
 
 	^ self new

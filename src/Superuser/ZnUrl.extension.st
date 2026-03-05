@@ -1,6 +1,6 @@
-Extension { #name : #ZnUrl }
+Extension { #name : 'ZnUrl' }
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 ZnUrl >> checksums [
 	^ self retrieveContents
 ]

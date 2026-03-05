@@ -1,26 +1,28 @@
 Class {
-	#name : #SuCommandSyntax,
-	#superclass : #Object,
+	#name : 'SuCommandSyntax',
+	#superclass : 'Object',
 	#instVars : [
 		'binary',
 		'flags'
 	],
-	#category : 'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 SuCommandSyntax >> addFlag: aScFlag [ 
 
 	flags add: aScFlag.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuCommandSyntax >> binary: aFileReference [ 
 
 	binary := aFileReference.
 ]
 
-{ #category : #'entry completion' }
+{ #category : 'entry completion' }
 SuCommandSyntax >> completionsFor: aString [ 
 
 	| tokens |
@@ -31,7 +33,7 @@ SuCommandSyntax >> completionsFor: aString [
 			flag longForm ifNotNil: [ str nextPut: flag longForm ] ] ].
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuCommandSyntax >> initialize [
 	super initialize.
 	flags := OrderedCollection new.

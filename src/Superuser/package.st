@@ -1,1 +1,1 @@
-Package { #name : #Superuser }
+Package { #name : 'Superuser' }

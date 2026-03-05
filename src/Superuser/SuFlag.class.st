@@ -1,50 +1,52 @@
 Class {
-	#name : #SuFlag,
-	#superclass : #Object,
+	#name : 'SuFlag',
+	#superclass : 'Object',
 	#instVars : [
 		'longForm',
 		'description',
 		'shortForm',
 		'argument'
 	],
-	#category : #'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFlag >> argument [
 	^ argument
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFlag >> argument: aString [
 	argument := aString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuFlag >> description [
 
 	^ description.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuFlag >> description: aString [ 
 
 	description := aString.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFlag >> longForm [
 
 	^ longForm
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuFlag >> longForm: aString [ 
 
 	longForm := aString.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFlag >> printOn: aStream [
 	longForm ifNotNil: [ aStream nextPutAll: '--'; nextPutAll: longForm ].
 	argument ifNotNil: [ aStream nextPutAll: '='; nextPutAll: argument ].
@@ -52,13 +54,13 @@ SuFlag >> printOn: aStream [
 	description ifNotNil: [ aStream nextPutAll: ' '; nextPutAll: description ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFlag >> shortForm [
 
 	^ shortForm.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuFlag >> shortForm: aString [ 
 
 	shortForm := aString.

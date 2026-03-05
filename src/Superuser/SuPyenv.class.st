@@ -36,24 +36,26 @@ export PYENV_VERSION=3.8.6
 ```
 "
 Class {
-	#name : #SuPyenv,
-	#superclass : #SuGenericUnixCommand,
-	#category : #'Superuser-Core'
+	#name : 'SuPyenv',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuPyenv class >> binaryName [
 	^ '/opt/homebrew/bin/pyenv' asFileReference
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuPyenv class >> installer [
 	^ self new
 		template: self binary fullName, ' install {version}';
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuPyenv class >> listingAvailableVersions [
 	^ self new
 		template: self binary fullName, ' install --list';
@@ -61,7 +63,7 @@ SuPyenv class >> listingAvailableVersions [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuPyenv class >> settingGlobalVersion [
 	^ self new
 		template: self binary fullName, ' global {version}';

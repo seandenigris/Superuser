@@ -1,15 +1,17 @@
 Class {
-	#name : #SuGhostscript,
-	#superclass : #SuGenericUnixCommand,
-	#category : #'Superuser-Core'
+	#name : 'SuGhostscript',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGhostscript class >> binaryName [
 	^ 'gs'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuGhostscript class >> convertForOCR [
 
 	^ self new
@@ -26,7 +28,7 @@ SuGhostscript class >> convertForOCR [
 		-c 30000000 setvmthreshold -f \ # Boost performance with 30MB extra RAM for complex PDFs"
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuGhostscript class >> creatingPreview [
 	^ self new
 		template: self binary, ' -dFirstPage=1 -dLastPage=1 -sDEVICE=jpeg -sOutputFile={outputFile}.jpg -dBATCH -dNOPAUSE -q  {inputFile}';

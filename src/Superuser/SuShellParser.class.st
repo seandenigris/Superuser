@@ -2,12 +2,14 @@
 self openShell
 "
 Class {
-	#name : #SuShellParser,
-	#superclass : #Object,
-	#category : 'Superuser-Tutor'
+	#name : 'SuShellParser',
+	#superclass : 'Object',
+	#category : 'Superuser-Tutor',
+	#package : 'Superuser',
+	#tag : 'Tutor'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuShellParser class >> openShell [
 
 	| entryCompletion |

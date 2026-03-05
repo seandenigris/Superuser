@@ -1,24 +1,26 @@
 Class {
-	#name : #SuRSyncHelpParserSpec,
-	#superclass : #TestCase,
-	#category : 'Superuser-Core'
+	#name : 'SuRSyncHelpParserSpec',
+	#superclass : 'TestCase',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParserSpec >> sampleOptionLineNoShortFlag [
 
 	^ '     --super                 receiver attempts super-user activities
 ' withUnixLineEndings.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParserSpec >> sampleOptionLineShortFlag [
 
 	^ ' -O, --omit-dir-times        omit directories when preserving times
 ' withUnixLineEndings.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParserSpec >> sampleOptionsSection [
 
 	^ '
@@ -28,7 +30,7 @@ Options
 ' withUnixLineEndings.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParserSpec >> sampleOutput [
 
 	^ 'rsync  version 2.6.9  protocol version 29
@@ -169,7 +171,7 @@ See http://rsync.samba.org/ for updates, bug reports, and answers
 ' withUnixLineEndings.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParserSpec >> testAcceptance [
 
 	| options |
@@ -180,7 +182,7 @@ SuRSyncHelpParserSpec >> testAcceptance [
 	(options at: 35) inspect.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParserSpec >> testOptionNoShortForm [
 
 	| option |
@@ -190,7 +192,7 @@ SuRSyncHelpParserSpec >> testOptionNoShortForm [
 	self assert: option description equals: 'receiver attempts super-user activities'.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParserSpec >> testOptionShortForm [
 
 	| option |
@@ -200,7 +202,7 @@ SuRSyncHelpParserSpec >> testOptionShortForm [
 	self assert: option description equals: 'omit directories when preserving times'.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuRSyncHelpParserSpec >> testOptionsSection [
 
 	| options |

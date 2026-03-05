@@ -2,20 +2,22 @@
 Technique adapted from https://stackoverflow.com/a/7362274
 "
 Class {
-	#name : #SuFfmpeg,
-	#superclass : #SuGenericUnixCommand,
+	#name : 'SuFfmpeg',
+	#superclass : 'SuGenericUnixCommand',
 	#instVars : [
 		'input'
 	],
-	#category : #'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFfmpeg class >> binaryName [
 	^ 'ffmpeg'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuFfmpeg class >> convertingVideoToAnimatedGIF [
 	^ self new
 		template: self binary, ' -i {inputFile} -vf "fps=10,scale={gifWidth}:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 10 - -loop 0 -layers optimize {outputFile}'; "Adapted from *https://superuser.com/a/556031*"
@@ -24,7 +26,7 @@ SuFfmpeg class >> convertingVideoToAnimatedGIF [
 	
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuFfmpeg class >> example [
 	<gtExample>
 	| result |
@@ -36,7 +38,7 @@ SuFfmpeg class >> example [
 	^ result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFfmpeg >> extent [
 	| info matches width |
 	info := self
@@ -50,19 +52,19 @@ SuFfmpeg >> extent [
 	"Implementation note: we match unrelated characters at the start and end, only to trim them again, to account for an edge case where the input filename matches the pattern"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFfmpeg >> initialize [
 	super initialize.
 	template := self binary, ' -i {inputFile}'.
 	^ self
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuFfmpeg >> reencodeForQT [
 	'ffmpeg -i input.mp4 -f mp4 -vcodec libx264 output.mp4'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuFfmpeg >> rotateVideo [
 	"From https://stackoverflow.com/questions/3937387/rotating-videos-with-ffmpeg
 	
@@ -76,7 +78,7 @@ Use transpose=2,transpose=2 for 180 degrees."
 	'ffmpeg -i in.mov -vf "transpose=1" out.mov'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuFfmpeg >> trim [
 	"From https://stackoverflow.com/questions/18444194/cutting-the-videos-based-on-start-and-end-time-using-ffmpeg"
 	

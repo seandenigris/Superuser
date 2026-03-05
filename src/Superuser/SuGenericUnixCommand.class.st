@@ -15,8 +15,8 @@ $! - last started background process in this shell
 $? - last exit code
 "
 Class {
-	#name : #SuGenericUnixCommand,
-	#superclass : #SuRunnable,
+	#name : 'SuGenericUnixCommand',
+	#superclass : 'SuRunnable',
 	#instVars : [
 		'administrator',
 		'isBackground',
@@ -31,34 +31,36 @@ Class {
 	#classInstVars : [
 		'binaryFolder'
 	],
-	#category : #'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> binary [
 	^ self binaryFolder 
 		ifNil: [ self binaryName ]
 		ifNotNil: [ :folder | (folder / self binaryName) fullName ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> binaryFolder [
 
 	^ binaryFolder
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> binaryFolder: anObject [
 
 	binaryFolder := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> binaryName [
 	self subclassResponsibility
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuGenericUnixCommand class >> defaultAdminUsername [
 	| prefFile |
 	DefaultAdminUsername ifNotNil: [ ^ DefaultAdminUsername ].
@@ -69,12 +71,12 @@ SuGenericUnixCommand class >> defaultAdminUsername [
 	self error: 'Default user name not set'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuGenericUnixCommand class >> defaultAdminUsername: aString [
 	DefaultAdminUsername := aString
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuGenericUnixCommand class >> exampleArgumentAutoEscaped [
 	<gtExample>
 	| result |
@@ -87,7 +89,7 @@ SuGenericUnixCommand class >> exampleArgumentAutoEscaped [
 	^ result
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 SuGenericUnixCommand class >> exampleNoArguments [
 	<gtExample>
 	| result |
@@ -98,7 +100,7 @@ SuGenericUnixCommand class >> exampleNoArguments [
 	^ result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> exampleOutputDecoder [
 	<gtExample>
 	| result |
@@ -113,27 +115,27 @@ SuGenericUnixCommand class >> exampleOutputDecoder [
 	^ result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> exampleSupportFolder [
 	^ BaselineOfSuperuser exampleSupportFolder
 ]
 
-{ #category : #persistence }
+{ #category : 'persistence' }
 SuGenericUnixCommand class >> restoreFrom: anObject [
 	DefaultAdminUsername := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> resultOfCommand: aString [
 	^ LibC resultOfCommand: aString
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand class >> run: commandString [
 	^ LibC system: commandString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> runInTerminal: aString [
 	"Implementation note: We decided to create and pass a file to osascript because:
 		* HEREDOC form didn't seem to do anything
@@ -152,17 +154,17 @@ SuGenericUnixCommand class >> runInTerminal: aString [
 	self run: 'osascript ', scriptFile suForCommand
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand class >> samplePNG_File [
 	^ self exampleSupportFolder / 'sample.png'
 ]
 
-{ #category : #persistence }
+{ #category : 'persistence' }
 SuGenericUnixCommand class >> spData [
 	^ DefaultAdminUsername
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand class >> which [
 	| cmd |
 	cmd := ('which ', self binary) asSuCommand.
@@ -170,41 +172,41 @@ SuGenericUnixCommand class >> which [
 	^ cmd output
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand >> , anObject [
 
 	template := self template, ' ', anObject suForCommand.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand >> asAdministrator [
 
 	administrator := true.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand >> asRoot [
 	self isRoot: true.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> basicCommandString [
 	"So we don't have to worry about extra spaces when adding flags, arguments, etc"
 	^ super basicCommandString withBlanksCondensed
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> binary [
 	^ self class binary
 ]
 
-{ #category : #'command - compatibility' }
+{ #category : 'command - compatibility' }
 SuGenericUnixCommand >> execute [
 	"This is the canonical message name from the GoF pattern, so provide it to reduce astonishment"
 	^ self run
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> gtRunActionFor: anAction [
 
 	<gtAction>
@@ -214,13 +216,13 @@ SuGenericUnixCommand >> gtRunActionFor: anAction [
 		  action: [ self run ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand >> inBackground [
 
 	isBackground := true.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand >> initialize [
 
 	super initialize.
@@ -228,22 +230,22 @@ SuGenericUnixCommand >> initialize [
 	redirectErrorsToOutput := false.
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 SuGenericUnixCommand >> isAdminstrator [
 	^ administrator ifNil: [ false ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> isRoot [
 	^ self maLazyInstVarUsing: self isRootDescription
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> isRoot: anObject [
 	isRoot := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand >> isRootDescription [
 	<magritteDescription>
 	^ MABooleanDescription new
@@ -252,48 +254,48 @@ SuGenericUnixCommand >> isRootDescription [
 			yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> output [
 	| rawOutput |
 	rawOutput := self class resultOfCommand: self string.
 	^ self outputDecoder cull: rawOutput
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> outputDecoder [
 	^ outputDecoder ifNil: [ [ :str | str ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> outputDecoder: aBlock [
 	outputDecoder := aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> prepareArguments: aCollection [
 	aCollection keysAndValuesDo: [ :k :v | aCollection at: k put: v suForCommand ].
 	"Implementation note: This used to be `#prepareArguments`, but ImageMagick needed to insert arguments before the super send. This wasn't possible without this hook where the collection is passed in as an argument"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> printOn: aStream [
 	aStream nextPutAll: '$ '.
 	super printOn: aStream
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand >> redirectErrorsToOutput [
 	
 	redirectErrorsToOutput := true.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SuGenericUnixCommand >> redirectOutputTo: aFileReference [ 
 
 	outputRedirect := aFileReference.
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 SuGenericUnixCommand >> run [
 	| exitCode |
 	self isRoot ifTrue: [ ^ self runRoot "It's not possible to get an error code in the current implementation because we punt to an external shell program" ].
@@ -303,7 +305,7 @@ SuGenericUnixCommand >> run [
 	exitCode = 0 ifFalse: [ self signalErrorCode: exitCode ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuGenericUnixCommand >> runAsAdministrator [
 	| command |
 	command := SuUnixUser current isAdmin
@@ -315,12 +317,12 @@ SuGenericUnixCommand >> runAsAdministrator [
 	^ self class runInTerminal: command
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 SuGenericUnixCommand >> runInTerminal [
 	 self class runInTerminal: self string
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 SuGenericUnixCommand >> runOSP [
 
 	"| process |
@@ -331,18 +333,18 @@ SuGenericUnixCommand >> runOSP [
 			yourself."
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuGenericUnixCommand >> runRoot [
 	
 	^ self runAsAdministrator
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 SuGenericUnixCommand >> signalErrorCode: exitCode [
 	self error: 'Exit code ' , exitCode asString , ' returned from ' , self string
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuGenericUnixCommand >> string [
 	^ String streamContents: [ :s |
 		self isRoot ifTrue: [ s nextPutAll: 'sudo ' ].

@@ -1,10 +1,12 @@
 Class {
-	#name : #SuFlagsParser,
-	#superclass : #PP2CompositeNode,
-	#category : #'Superuser-Core'
+	#name : 'SuFlagsParser',
+	#superclass : 'PP2CompositeNode',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuFlagsParser >> start [
 	| token argument shortFlag flag |
 	token := (#letter asPParser, (#letter asPParser / $- asPParser) star) flatten.

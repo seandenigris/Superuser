@@ -1,6 +1,6 @@
-Extension { #name : #Tempfile }
+Extension { #name : 'Tempfile' }
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 Tempfile >> suForCommand [
 	^ self reference suForCommand
 ]

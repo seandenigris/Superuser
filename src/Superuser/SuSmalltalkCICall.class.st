@@ -1,26 +1,28 @@
 Class {
-	#name : #SuSmalltalkCICall,
-	#superclass : #SuScriptFunctionCall,
+	#name : 'SuSmalltalkCICall',
+	#superclass : 'SuScriptFunctionCall',
 	#instVars : [
 		'repositoryFolder'
 	],
 	#classVars : [
 		'RepositoryFolder'
 	],
-	#category : #'Superuser-SmalltalkCI'
+	#category : 'Superuser-SmalltalkCI',
+	#package : 'Superuser',
+	#tag : 'SmalltalkCI'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall class >> repositoryFolder [
 	^ RepositoryFolder
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall class >> repositoryFolder: anObject [
 	RepositoryFolder := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall >> commandString [
 
 	| template |
@@ -31,7 +33,7 @@ SuSmalltalkCICall >> commandString [
 	} asDictionary.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall >> commandStringGtViewOn: aView [
 	<gtView>
 
@@ -41,17 +43,17 @@ SuSmalltalkCICall >> commandStringGtViewOn: aView [
 		priority: 25
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall >> repositoryFolder [
 	^ repositoryFolder ifNil: [ self class repositoryFolder ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall >> repositoryFolder: anObject [
 	repositoryFolder := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall >> stubIsARM: aBoolean [
 
 	aBoolean
@@ -59,7 +61,7 @@ SuSmalltalkCICall >> stubIsARM: aBoolean [
 		ifFalse: [ self stub: 'hardware_platform' with: 'echo "x86_64"' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall >> stubPlatform: aString isARM: aBoolean [
 
 	| platformOptions |
@@ -72,7 +74,7 @@ SuSmalltalkCICall >> stubPlatform: aString isARM: aBoolean [
 	self stubIsARM: aBoolean
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSmalltalkCICall >> stubRelease: aString [
 
 	self stub: 'gtoolkit::latest_release_version' with: 'echo "', aString, '"'

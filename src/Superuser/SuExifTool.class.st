@@ -4,18 +4,19 @@
 - Mac - can install with Homebrew `brew install exiftool`
 "
 Class {
-	#name : #SuExifTool,
-	#superclass : #SuGenericUnixCommand,
-	#category : #Superuser
+	#name : 'SuExifTool',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser',
+	#package : 'Superuser'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuExifTool class >> binaryName [
 
 	^ 'exiftool'
 ]
 
-{ #category : #'exif reader' }
+{ #category : 'exif reader' }
 SuExifTool class >> exifForFile: aFileReference [
 
 	^ self new
@@ -28,7 +29,7 @@ SuExifTool class >> exifForFile: aFileReference [
 		run
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuExifTool class >> removeAllMetadataFrom: file [
 
 	^ self new
@@ -37,7 +38,7 @@ SuExifTool class >> removeAllMetadataFrom: file [
 		run
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuExifTool class >> restoreSafeMetadataTo: file [
 
 	| backupFile |
@@ -50,7 +51,7 @@ SuExifTool class >> restoreSafeMetadataTo: file [
 		run
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuExifTool class >> scrubMetadataFrom: file [
 
 	self removeAllMetadataFrom: file.

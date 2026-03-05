@@ -21,18 +21,20 @@ One creative use for wildcards is to flatten a directory structure at the destin
 
 "
 Class {
-	#name : #SuRSync,
-	#superclass : #SuUnixCommand,
-	#category : #'Superuser-Core'
+	#name : 'SuRSync',
+	#superclass : 'SuUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRSync class >> binaryName [
 
 	^ '/usr/bin/rsync' asFileReference.
 ]
 
-{ #category : #utilities }
+{ #category : 'utilities' }
 SuRSync class >> copyFilesOutput: aFile from: sourceFolder to: targetFolder [
 	"
 		Sometimes it seems that certain file checksums will not be equal after being copied by rsync. This is a utility to manually copy just those files.
@@ -72,14 +74,14 @@ SuRSync class >> copyFilesOutput: aFile from: sourceFolder to: targetFolder [
 		{ md5s = md5t. md5s. md5t } ]"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRSync class >> shortHelp [
 
 	^ 'rsync is a file transfer program capable of efficient remote update
 via a fast differencing algorithm.'.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRSync class >> syntax [
 
 	| flags result |

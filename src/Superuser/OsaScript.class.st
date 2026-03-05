@@ -1,6 +1,6 @@
 Class {
-	#name : #OsaScript,
-	#superclass : #Object,
+	#name : 'OsaScript',
+	#superclass : 'Object',
 	#instVars : [
 		'recompilableOutput',
 		'target',
@@ -9,10 +9,11 @@ Class {
 		'errorsToStdout',
 		'language'
 	],
-	#category : #Superuser
+	#category : 'Superuser',
+	#package : 'Superuser'
 }
 
-{ #category : #example }
+{ #category : 'example' }
 OsaScript class >> example [
 	<sampleInstance>
 
@@ -24,7 +25,7 @@ OsaScript class >> example [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OsaScript class >> run: aString [
 
 	| command |
@@ -34,20 +35,20 @@ OsaScript class >> run: aString [
 	^ command run.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 OsaScript >> beJavaScript [
 
 	self language: 'JavaScript'
 ]
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 OsaScript >> errorsToStdout [
 	"See setter comment"
 
 	^ errorsToStdout ifNil: [ true ].
 ]
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 OsaScript >> errorsToStdout: aBoolean [
 	"From the man page:
 		osascript normally prints script errors to stderr, so downstream
@@ -59,14 +60,14 @@ OsaScript >> errorsToStdout: aBoolean [
 	errorsToStdout := aBoolean.
 ]
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 OsaScript >> isOutputRecompilable [
 	"See setter comment"
 
 	^ recompilableOutput ifNil: [ true ].
 ]
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 OsaScript >> isOutputRecompilable: aBoolean [
 	"From the man page:
 		osascript normally prints its results in human-readable form:
@@ -79,23 +80,23 @@ OsaScript >> isOutputRecompilable: aBoolean [
 	recompilableOutput := aBoolean.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OsaScript >> language [
 	^ language
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OsaScript >> language: anObject [
 	language := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 OsaScript >> run [
 
 	^ Smalltalk tools shell new outputOf: self runCommand.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OsaScript >> runCommand [
 
 	| commandTemplate flags commandString hasFlags languageArg |
@@ -124,22 +125,22 @@ END_S'.
 		- Previously tried using temp files. See Applescript-St/src/SimpleApplescript/Applescript.class.st, removed in commit 8feac02 on 2019-07-16. OSShell also tried this approach."
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OsaScript >> source [
 	^ scriptSource ifNil: [ scriptSource := '' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OsaScript >> source: aString [
 	scriptSource := aString
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 OsaScript >> target: applicationName [
 	target := applicationName
 ]
 
-{ #category : #scripting }
+{ #category : 'scripting' }
 OsaScript >> tell: applicationString to: script [
 	"Limitation: currently one 'tell' per script"
 	| template tellScript |

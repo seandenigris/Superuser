@@ -1,16 +1,18 @@
 Class {
-	#name : #SuperuserDB,
-	#superclass : #SpFileDatabase,
-	#category : 'Superuser-Persistence'
+	#name : 'SuperuserDB',
+	#superclass : 'SpFileDatabase',
+	#category : 'Superuser-Persistence',
+	#package : 'Superuser',
+	#tag : 'Persistence'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuperuserDB class >> backupDirectoryParent [
 	
 	^ FileLocator dynabookData / 'Superuser'
 ]
 
-{ #category : #'loading/saving' }
+{ #category : 'loading/saving' }
 SuperuserDB class >> schema [
 
 	^ { 

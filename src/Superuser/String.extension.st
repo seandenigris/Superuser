@@ -1,6 +1,6 @@
-Extension { #name : #String }
+Extension { #name : 'String' }
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 String >> asSuCommand [
 
 	^ SuGenericUnixCommand new
@@ -8,12 +8,12 @@ String >> asSuCommand [
 		yourself.
 ]
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 String >> asSuEmailAddress [
 	^ SuEmailAddress fromString: self
 ]
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 String >> suForCommand [
 
 	^ self.

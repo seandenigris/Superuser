@@ -4,12 +4,14 @@ I should probably be a ""real"" Applescript command.
 NB. QNAP's manual [suggests](https://docs.qnap.com/nas-outdated/4.1/SMB/en/index.html?connect_shares_maclinux.htm) that there should be a colon before the path, not sure if that's right/wrong/optional.
 "
 Class {
-	#name : #SuSMBMount,
-	#superclass : #SuGenericUnixCommand,
-	#category : #'Superuser-Core'
+	#name : 'SuSMBMount',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuSMBMount >> initialize [
 	super initialize.
 	template := '/usr/bin/osascript -e ''mount volume "smb://{user}@{server}/{share}"'''. 

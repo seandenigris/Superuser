@@ -2,22 +2,23 @@
 I model an email address with an optional name (as supplied e.g. by an email client or server).
 "
 Class {
-	#name : #SuEmailAddress,
-	#superclass : #Object,
+	#name : 'SuEmailAddress',
+	#superclass : 'Object',
 	#instVars : [
 		'addressString',
 		'name'
 	],
-	#category : #Superuser
+	#category : 'Superuser',
+	#package : 'Superuser'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuEmailAddress class >> fromString: aString [ 
 
 	^ self parser parse: aString
 ]
 
-{ #category : #parsing }
+{ #category : 'parsing' }
 SuEmailAddress class >> grammar [
 
 	| email word firstName fullName lastName reversedName emailOnly nameAndEmail nameNode |
@@ -34,7 +35,7 @@ SuEmailAddress class >> grammar [
 	^ emailOnly | nameAndEmail
 ]
 
-{ #category : #parsing }
+{ #category : 'parsing' }
 SuEmailAddress class >> parser [
 	
 	^ self grammar ==> [ :nodes |
@@ -44,27 +45,42 @@ SuEmailAddress class >> parser [
 			yourself ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuEmailAddress >> addressString [
 	^ addressString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuEmailAddress >> addressString: anObject [
 	addressString := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'as yet unclassified' }
+SuEmailAddress >> displayStringOn: aStream [
+
+	self name ifNotNil: [
+		aStream 
+			nextPutAll: self name;
+			space ].
+			
+	self addressString ifNotNil: [ 
+		aStream 
+			nextPut: $<;
+			nextPutAll: self addressString;
+			nextPut: $> ]
+]
+
+{ #category : 'accessing' }
 SuEmailAddress >> domain [
 	^ addressString copyAfter: $@
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuEmailAddress >> name [
 	^ name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuEmailAddress >> name: anObject [
 	name := anObject
 ]

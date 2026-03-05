@@ -1,15 +1,17 @@
 Class {
-	#name : #SuHdiutil,
-	#superclass : #SuGenericUnixCommand,
-	#category : 'Superuser-Core'
+	#name : 'SuHdiutil',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuHdiutil class >> binaryName [
 	^ 'hdiutil'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuHdiutil class >> convertForOCR [
 
 	^ self new
@@ -17,7 +19,7 @@ SuHdiutil class >> convertForOCR [
 		yourself.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SuHdiutil class >> mounting [
 
 	^ self new

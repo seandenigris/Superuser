@@ -2,17 +2,18 @@
 self new isVulnerableToHeartbleed.
 "
 Class {
-	#name : #SuOpenSSL,
-	#superclass : #SuGenericUnixCommand,
-	#category : #Superuser
+	#name : 'SuOpenSSL',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser',
+	#package : 'Superuser'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuOpenSSL class >> binaryName [
 	^ 'openssl'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuOpenSSL class >> digest [
 	
 	| outputFile |
@@ -29,7 +30,7 @@ SuOpenSSL class >> digest [
 	"Adapted from https://apple.stackexchange.com/a/230919"
 ]
 
-{ #category : #utilties }
+{ #category : 'utilties' }
 SuOpenSSL class >> isVulnerableToHeartbleed [
 	"https://www.openssl.org/news/secadv_20140407.txt"
 	
@@ -41,7 +42,7 @@ SuOpenSSL class >> isVulnerableToHeartbleed [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuOpenSSL class >> sha256: aFileReference [
 	
 	^ self digest
@@ -50,7 +51,7 @@ SuOpenSSL class >> sha256: aFileReference [
 		output
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuOpenSSL class >> sha512: aFileReference [
 	
 	^ self digest

@@ -19,33 +19,35 @@ Superuser provides a bit of magic for safely representing commonly used object t
 Alternately, and for more (per command object) control, Magritte element descriptions  can be a great place to store the encoder. Just send {{gtMethod:MAElementDescription>>#suEncoder:}}
 "
 Class {
-	#name : #SuRunnable,
-	#superclass : #Object,
+	#name : 'SuRunnable',
+	#superclass : 'Object',
 	#instVars : [
 		'argumentSource',
 		'template'
 	],
-	#category : #'Superuser-Core'
+	#category : 'Superuser-Core',
+	#package : 'Superuser',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRunnable >> argumentAt: key [
 	^ self argumentSource at: key
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRunnable >> argumentAt: key put: value [
 	self ensureArgumentSourceFor: key.
 	self argumentSource at: key put: value.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuRunnable >> argumentSource [
 	^ argumentSource ifNil: [ ^ #() ]
 	"nil is perfectly acceptable to format:, but passing an empty collection prevents nil checks elsewhere e.g. argument escaping"
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuRunnable >> argumentSource: anObject [
 	"It is usually preferrable to set arguments via #argumentAt:put:, which will automatically handle creating and maintaining the appropriate collection for the arguments.
 	
@@ -55,7 +57,7 @@ SuRunnable >> argumentSource: anObject [
 	argumentSource := anObject
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuRunnable >> basicCommandString [
 	| preparedArguments |
 	preparedArguments := self argumentSource copy.
@@ -66,20 +68,20 @@ SuRunnable >> basicCommandString [
 		ifEmpty: [ self template ]
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 SuRunnable >> copyToClipboard [
 	<magritteAction>
 	Clipboard clipboardText: self string
 ]
 
-{ #category : #'reflective operations' }
+{ #category : 'reflective operations' }
 SuRunnable >> doesNotUnderstand: aMessage [
 	^ (self argumentSource isDictionary and: [ self argumentSource includesKey: aMessage selector ]) 
 		ifTrue: [ self argumentSource at: aMessage selector ]
 		ifFalse: [ super doesNotUnderstand: aMessage ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuRunnable >> ensureArgumentSourceFor: key [ 
 	| maxSize |
 	argumentSource ifNotNil: [ ^ argumentSource ].
@@ -94,7 +96,7 @@ SuRunnable >> ensureArgumentSourceFor: key [
 	^ self error: 'Can''t use a ', key class, ' as key'.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRunnable >> gtCLIViewFor: aView [
 	<gtView>
 	^ aView textEditor
@@ -102,12 +104,12 @@ SuRunnable >> gtCLIViewFor: aView [
 		text: self displayString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SuRunnable >> prepareArguments: aCollection [
 	"Hook e.g. for arguments to be escaped or additional arguments be inserted"
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 SuRunnable >> printOn: aStream [
 	| s |
 	s := [ self string ]
@@ -116,18 +118,18 @@ SuRunnable >> printOn: aStream [
 	aStream nextPutAll: s
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRunnable >> string [
 	"Hook to allow adornment e.g. Unix might insert `sudo` if root"
 	^ self basicCommandString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRunnable >> template [
 	^ template
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRunnable >> template: aString [
 	"aString - an argument to `String>>#format:` that will be filled with values from `#argumentSource`. NB. I can have no variables to fill."
 	template := aString

@@ -1,6 +1,6 @@
 Class {
-	#name : #SuScriptFunctionCall,
-	#superclass : #Object,
+	#name : 'SuScriptFunctionCall',
+	#superclass : 'Object',
 	#instVars : [
 		'functionName',
 		'arguments',
@@ -8,10 +8,12 @@ Class {
 		'stubMap',
 		'stubScript'
 	],
-	#category : #'Superuser-SmalltalkCI'
+	#category : 'Superuser-SmalltalkCI',
+	#package : 'Superuser',
+	#tag : 'SmalltalkCI'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall class >> example [
 	<gtExample>
 	
@@ -30,7 +32,7 @@ SuScriptFunctionCall class >> example [
 		output.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall class >> exampleStub [
 	<gtExample>
 	
@@ -54,17 +56,17 @@ SuScriptFunctionCall class >> exampleStub [
 	^ result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> arguments [
 	^ arguments
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> arguments: anObject [
 	arguments := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> commandString [
 
 	^ String streamContents: [ :str |
@@ -76,7 +78,7 @@ SuScriptFunctionCall >> commandString [
 		str << self functionName surroundedByDoubleQuotes << ' ' << self arguments suForCommand ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> ensureStubScript [
 
 	stubScript ifNil: [ stubScript := Tempfile withSuffix: 'stubs.sh' ].
@@ -90,17 +92,17 @@ SuScriptFunctionCall >> ensureStubScript [
 	^ stubScript
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> functionName [
 	^ functionName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> functionName: anObject [
 	functionName := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> output [
 
 	OSShell new
@@ -110,44 +112,44 @@ SuScriptFunctionCall >> output [
 			^ outString ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> script [
 	^ script
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> script: anObject [
 	script := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> stub: fncName willReturn: aString [
 
 	self stubMap at: fncName put: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> stub: fncName with: aString [ 
 
 	self stubMap at: fncName put: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> stubMap [
 	^ stubMap ifNil: [ stubMap := Dictionary new ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> stubMap: anObject [
 	stubMap := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> stubScript [
 	^ stubScript
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuScriptFunctionCall >> stubScript: anObject [
 	stubScript := anObject
 ]

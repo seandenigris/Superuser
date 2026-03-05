@@ -2,18 +2,19 @@
 requires `librsvg`
 "
 Class {
-	#name : #SuRsvgConvert,
-	#superclass : #SuGenericUnixCommand,
-	#category : #Superuser
+	#name : 'SuRsvgConvert',
+	#superclass : 'SuGenericUnixCommand',
+	#category : 'Superuser',
+	#package : 'Superuser'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRsvgConvert class >> binaryName [
 
 	^ 'rsvg-convert'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SuRsvgConvert class >> from: sourceFile to: targetFile [
 
 	^ self new

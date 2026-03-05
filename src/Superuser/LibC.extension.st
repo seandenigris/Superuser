@@ -1,6 +1,6 @@
-Extension { #name : #LibC }
+Extension { #name : 'LibC' }
 
-{ #category : #'*Superuser' }
+{ #category : '*Superuser' }
 LibC class >> runAndWait: aString [ 
 	^ self system: aString
 ]
