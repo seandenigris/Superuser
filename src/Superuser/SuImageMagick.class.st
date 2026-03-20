@@ -1,10 +1,15 @@
 "
-!Installation
+#Installation
 On Mac, you can install via Homebrew like this:
 ```shell
 brew install imagemagick
 ```
-
+#Configuration
+If your installation, as typically above, does not link all the executables to a common path, you will also have to tell magick where to find the other programs it needs to work. From the command line:
+1. Find the config folder `MAGICK_CONFIG=""$(magick -list configure | sed -n 's/^[[:space:]]*CONFIGURE_PATH[[:space:]]*=\{0,1\}[[:space:]]*//p' | head -n1 | cut -d: -f1)""`
+2. Open the delegates XML file: `vim ""$MAGICK_CONFIG/delegates.xml""`
+3. Replace e.g. the gs references with full paths `:%s@;gs@;/opt/homebrew/bin/gs@g` (using custom delimiters rather than escape the slashes
+4. Force save of read only file: `:w !sudo tee %`
 "
 Class {
 	#name : 'SuImageMagick',
