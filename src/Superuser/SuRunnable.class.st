@@ -101,7 +101,8 @@ SuRunnable >> gtCLIViewFor: aView [
 	<gtView>
 	^ aView textEditor
 		title: 'CLI';
-		text: self displayString
+		text: self displayString;
+		actionUpdateButton
 ]
 
 { #category : 'private' }
