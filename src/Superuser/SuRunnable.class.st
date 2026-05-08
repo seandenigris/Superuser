@@ -71,7 +71,8 @@ SuRunnable >> basicCommandString [
 { #category : 'copying' }
 SuRunnable >> copyToClipboard [
 	<magritteAction>
-	Clipboard clipboardText: self string
+	
+	self string copyToClipboard
 ]
 
 { #category : 'reflective operations' }

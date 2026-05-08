@@ -311,7 +311,7 @@ SuGenericUnixCommand >> runAsAdministrator [
 	command := SuUnixUser current isAdmin
 		ifTrue: [ self string ]
 		ifFalse: [
-			self string copyToClipboard.
+			self copyToClipboard.
 			'su ', self class defaultAdminUsername ].
 	
 	^ self class runInTerminal: command
